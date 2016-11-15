@@ -1,0 +1,17 @@
+LECTURE DU FICHIER
+Problemes eventuels :
+- fichier vide
+- contient autre chose que des chiffres, ou des chiffres illégaux (ex: --)
+- longueur des lignes inégale
+
+
+
+- la distance en pixels entre les points devra etre propotionnelle au nombre de points
+- elle devra prévoir une marge APRES rotation de l'image ET en prenant en compte l'altitude max des points
+
+
+
+CREATION DE LA VUE
+- une fois le fichier lu, on stocke les coordonnées dans une matrice (ou autre forme à définir).
+- On crée une seconde matirce avec les mêmes dimensions. MAIS à la place de la hauteur, on a maintenant 3 integers : abscisse projetée, ordonnée projetée, couleur. Les deux premiers sont trouvés grâce à une matrice de projection qui dépend du type de projection.
+- cette matrice repasse dans une fonction qui va centrer et normaliser la map en fonction des coordonnées max des points.

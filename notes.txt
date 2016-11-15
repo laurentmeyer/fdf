@@ -1,0 +1,41 @@
+we also need a system that defines how these eight points are connected to each other to make up the faces of the box. In CG, this is called the topology of the object.
+Topology refers to how points which we generally call vertices are connected to each other to form faces (or flat surfaces). These faces are also called polygons. The box would be made of six faces or six polygons and the set of polygons forms what we call a polygonal mesh or simply a mesh.
+You can see an image, or a canvas as some sort of flat surface placed some distance away from the eye. Trace four lines all starting from the eye to each one of the four corners of the canvas and extend these lines further away into the world (as far as you can see). You get a pyramid which we call a viewing frustum (and not frustrum). The viewing frustum defines some sort of volume in 3D space and the canvas itself it just a plane cutting of this volume perpendicular to the eye line of sight.
+When the length of a vector is exactly 1, we say that the vector is normalised. Normalisation of vectors is often a source of bugs in applications and every time you declare a vector (or even use one), we recommend that you always consciously ask yourself if this vector is/isn't or should/shouldn't be normalised.
+
+A normal is the technical term used in Computer Graphics (and Geometry) to describe the orientation of a surface of a geometric object at a point on that surface. Technically, the surface normal to a surface at point PP, can be seen as the vector perpendicular to a plane tangent to the surface at PP. Normals play an important role in shading where they are used to compute the brightness of objects (see further lessons on Lights and Shading).
+Normals can be thought of as vectors with one caveat: they do not transform the same way that vectors do.
+
+Dot product
+The dot product or scalar product requires two vectors A and B and can be seen as the projection of one vector onto the other. The result of the dot product is a real number (a float or double in programming).
+A⋅B=A.x∗B.x+A.y∗B.y+A.z∗B.z
+The dot product is a very important operation in 3D. It can be used for many things. As a test of orthogonality. When two vectors are perpendicular to each other (A.B), the result of the dot product between these two vectors is 0. When the two vectors are pointing in opposite directions (A.C), the dot product returns -1. When they are pointing in the exact same direction (A.D), it returns 1. It is also used intensively to find out the angle between two vectors or compute the angle between a vector and the axis of a coordinate system
+
+Cross product
+The cross product is also an operation on two vectors, but to the difference of the dot product which returns a number, the cross product returns a vector. The particularity of this operation is that the vector resulting from the cross product is perpendicular to the other two.
+CX=AY∗BZ−AZ∗BY
+CY=AZ∗BX−AX∗BZ
+CZ=AX∗BY−AY∗BX.
+
+The cross product is anticommutative (swapping the position of any two arguments negates the result). If AxB=C then BxA=-C.
+In the case of a right-hand coordinate system, if you align the index finger along the A vector (for example the tangent at a point on the surface) and the middle finger along the B vector (the bitangent if you try to figure out the orientation of a normal), the thumb will point in the direction of the C vector (the normal). Note that if you use the same technique but with the left hand on the same vectors A and B, your the thumb will point in the opposite direction. Remember though, that this only a representation issue.
+In mathematics, the result of a cross product is called a pseudo vector. The order of the vector in the cross product operation is important when surface normals are computed from the tangent and bitangent at the point where the normal is computed. Depending on this order, the resulting normal can either be pointing towards the interior of the surface (inward-pointing normal) or away from it (outward-pointing normal).
+
+
+TRIGONOMETRIC FUNCTIONS
+Alpha is an angle, counterclockwise. cos alpha is the projection of the point on the absciss and sin alpha is the projection on the y-axis.
+don't forget that the trigonometric functions in C++ expect the angles to be expressed in radians.
+
+
+The key idea in understanding matrices is that each row of the matrix represents an axis (or the bases) of a coordinate system. This is an important as later, you will learn how to create matrices to transform points and vectors from one coordinate system to another (change of basis) by simply replacing the rows of the matrix by the coordinates of each axis of that coordinate system you want to transform your vectors or points into
+Matrices are less of mystery when you understand that they are just a way of storing the coordinates of a coordinate system where the rows of the matrix are the axis of this coordinate system or orientation matrix as we call it sometimes.
+
+In fact the type of matrices we have just described in this chapter and the previous one (the rotation matrices), are called in linear algebra, orthogonal matrices. An orthogonal matrix is a square matrix with real entries whose columns and rows are orthogonal unit vectors.
+Orthogonal matrices have a few interesting properties but maybe the most useful one in Computer Graphics, is that the transpose of an orthogonal matrix is equal to its inverse. Assuming Q is an orthogonal matrix, we can write:
+
+QT = Q−1 QT = Q−1 which entails that QQT=I
+
+In short, an affine transformation, is a transformation that preserves straight lines. The other type of transformation we will be studying in Computer Graphics are called projective transformations (perspective projection is a projective transformation). As you may have guessed, such transformations do not necessarily preserve parallelism between lines
+
+HOMOGENEOUS POINTS
+Technically, if we were to make a multiplication of an homogeneous point by a [4x4] matrix, the w coordinate of the transformed point would be obtained by multiplying the point's coordinates by the coefficients of the matrix fourth column. However as we mentioned before, this column is almost always set to (0, 0, 0, 1). In that case, the value of w' (the w coordinate of the transformed point) should be 1 (w'=x*0+y*0+z*0+w(=1)*1=1) and the resulting transformed x', y' and z' coordinates can be used directly. But as we also mentionned briefly, this fourth column is not always set to (0, 0, 0, 1) particularly when you deal with projection matrices (matrices that project points to the screen). In these special cases, the result for w' can be different than 1 (which is intentional) but for this point to be usable as a Cartesian point, we need to normalize w' back to 1 by dividing it by itself which requires to divide the other coordinates (x', y' and z') by w' as well.
