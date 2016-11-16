@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 16:49:15 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/15 19:25:22 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/16 21:19:11 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 
 typedef struct		s_img
 {
-	void			*img;
+	void			*img_ptr;
 	char			*addr;
 	int				l_size;
 }					t_img;

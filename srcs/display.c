@@ -6,13 +6,14 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 18:41:22 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/15 19:28:06 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/16 21:55:25 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include <stdlib.h>
 
+#include <stdio.h>
 
 //int		is_in_circle(t_pt *origin, t_pt *point, int rayon)
 //{
@@ -21,12 +22,6 @@
 //	return (0);
 //}
 //
-//void		draw_point(t_img *img, t_pt *pt, int color)
-//{
-//	ft_memcpy(img->addr + (pt->x + pt->y * img->win_w) * sizeof(int),
-//				&color,
-//				sizeof(int));
-//}
 //
 //void		draw_circle(t_img *img, t_pt *center, int rayon, int color)
 //{
@@ -74,9 +69,68 @@
 //	mlx_loop(img->ptr);
 //}
 
+void	print_plist(t_data *data)
+{
+	t_list	*plist;
+	t_pt	*pt;
+
+	plist = data->plist;
+	while (plist)
+	{
+		pt = (t_pt *)(plist->content);
+		printf("x = %d y = %d\n", pt->x, pt->y);
+		plist = plist->next;
+	}
+}
+
+void		print_address(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < WIN_H * WIN_W)
+	{
+		printf("%d\n", *((int *)(data->img->addr + i * sizeof(int))));
+		i += 1;
+	}
+}
+
+void		print_point(t_data *data, t_pt *pt, int color)
+{
+	if (pt->x < WIN_W && pt->x >= 0 && pt->y < WIN_H && pt->y >= 0)
+		ft_memcpy(data->img->addr + (pt->x + pt->y * WIN_W) * sizeof(int),
+				&color,
+				sizeof(int));
+}
+
+int		point_color(t_pt *pt)
+{
+	if (pt)
+		;
+	return (0xFF00FF);
+}
+
+void	print_points(t_data *data)
+{
+	t_list	*plist;
+	t_pt	*pt;
+
+	//print_plist(data);
+	plist = data->plist;
+	while (plist)
+	{
+		pt = (t_pt *)(plist->content);
+//		printf("x = %d y = %d\n", pt->x, pt->y);
+		print_point(data, pt, point_color(pt));
+		plist = plist->next;
+	}
+}
+
 int		display_image(t_data *data)
 {
-	if (!mlx_put_image_to_window(data->ptr, data->win, data->img, 0, 0))
+	print_points(data);
+	print_address(data);
+	if (!mlx_put_image_to_window(data->ptr, data->win, data->img->img_ptr, 0, 0))
 		exit(0);
 	mlx_key_hook(data->win, &key_hooks, data);
 	mlx_loop(data->ptr);

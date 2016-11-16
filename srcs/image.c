@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 17:53:56 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/15 19:11:49 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/16 21:55:27 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ t_img	*init_image(t_data *data)
 
 	endian = ENDIAN;
 	pix_bits = PIX_BITS;
-	if (!(image = (t_img *)malloc(sizeof(t_img))))
+	if ((image = (t_img *)malloc(sizeof(t_img))))
 	{
-		if (!(image->img = mlx_new_image(data->ptr, WIN_W, WIN_H)))
+		if (!(image->img_ptr = mlx_new_image(data->ptr, WIN_W, WIN_H)))
 			return (NULL);
 		image->l_size = sizeof(int) * WIN_W;
-		if (!(image->addr = mlx_get_data_addr(image->img, &pix_bits,
+		if (!(image->addr = mlx_get_data_addr(image->img_ptr, &pix_bits,
 						&(image->l_size), &endian)))
 			return (NULL);
 	}

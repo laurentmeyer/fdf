@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 16:49:07 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/15 19:27:13 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/16 17:18:29 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		main(int ac, char **av)
 		ft_putstr("Erreur\n");
 	if ((fd = open(av[1], O_RDONLY)) != -1
 			&& (data = init_data())
-//			&& fill_plist(fd, data)
+			&& fill_plist(fd, data)
 //			&& fill_qlist(fd, data))
 			&& display_image(data))
 		close(fd);
