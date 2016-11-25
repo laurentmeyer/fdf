@@ -1,11 +1,10 @@
-OBJECTS =	data.o		\
-			display.o	\
-			hooks.o		\
-			image.o		\
-			main.o		\
-			plist.o		\
-			points.o	\
-			window.o
+OBJECTS =	main.o					\
+			init.o					\
+			matrix_basics.o			\
+			matrix_transforms.o		\
+			vectors.o				\
+			hooks.o					\
+			display.o
 
 NAME = fdf
 

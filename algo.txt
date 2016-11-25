@@ -6,12 +6,14 @@ Problemes eventuels :
 
 
 
-- la distance en pixels entre les points devra etre propotionnelle au nombre de points
-- elle devra prévoir une marge APRES rotation de l'image ET en prenant en compte l'altitude max des points
 
 
 
-CREATION DE LA VUE
-- une fois le fichier lu, on stocke les coordonnées dans une matrice (ou autre forme à définir).
-- On crée une seconde matirce avec les mêmes dimensions. MAIS à la place de la hauteur, on a maintenant 3 integers : abscisse projetée, ordonnée projetée, couleur. Les deux premiers sont trouvés grâce à une matrice de projection qui dépend du type de projection.
-- cette matrice repasse dans une fonction qui va centrer et normaliser la map en fonction des coordonnées max des points.
+
+on commence par placer la caméra : eye (3 axes dont x fixe et z qui pointe vers l'origine du repere world).
+Au préalable on aura recentré la map autour de l'origine.
+
+2 distances possibles pour l'eye, en fonction du type de vue choisi.
+Pour la vue ortho et parallèle, l'eye est très loin. Pour la vue 3d, bcp plus proche.
+En revanche on fait varier la distance du near clipping plane avec les TOUCHES + / -.
+Avec les touches haut / bas et gauche droite, on fait varier l'angle de l'axe sur lequel est positionné l'eye. Initialement, il est sur l'axe orhto (1, 1, 1).

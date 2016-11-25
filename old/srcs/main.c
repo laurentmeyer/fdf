@@ -5,36 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 16:10:17 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/25 21:53:11 by lmeyer           ###   ########.fr       */
+/*   Created: 2016/11/14 16:49:07 by lmeyer            #+#    #+#             */
+/*   Updated: 2016/11/16 17:18:29 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include "libft.h"
 #include <stdlib.h>
+#include <math.h>
+#include <fcntl.h>
+#include <unistd.h>
 
-#include <stdio.h>
-
-int		main(void)
+int		main(int ac, char **av)
 {
-	t_data		*data;
-//	t_vec4f		*a;
-//	t_vec4f		*b;
-//	t_vec4f		*c;
-//	t_vec4f		*d;
-//
-//	a = vec4f_new(100, 0, 100, 1);
-//	b = vec4f_new(200, 0, 100, 1);
-//	c = vec4f_new(100, 0, 200, 1);
-//	d = vec4f_new(200, 0, 200, 1);
+	int		fd;
+	t_data	*data;
 
-	if ((data = init_data()))
-	{
-//		(data->world_pts)[0][0] = a;
-//		(data->world_pts)[0][1] = b;
-//		(data->world_pts)[1][0] = c;
-//		(data->world_pts)[1][1] = d;
-		display_image(data);
-	}
+	if (ac != 2)
+		ft_putstr("Erreur\n");
+	if ((fd = open(av[1], O_RDONLY)) != -1
+			&& (data = init_data())
+			&& fill_plist(fd, data)
+//			&& fill_qlist(fd, data))
+			&& display_image(data))
+		close(fd);
 	return (0);
 }
