@@ -6,31 +6,28 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 21:41:41 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/25 21:53:13 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/28 17:29:54 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 void	pixel_put(t_data *data, int x, int y, int color)
 {
+	if (x >= 0 && x < WIN_W && y >= 0 && y < WIN_H)
 	((unsigned int *)(data->img_addr))[y * WIN_W + x]
 		= mlx_get_color_value(data->ptr, color);
 }
 
 void	print_data_details(t_data *data)
 {
-	mlx_string_put(data->ptr, data->win, 150, 150, WHITE, "coucou\nc'est moi");
+	mlx_string_put(data->ptr, data->win, 0, 0, WHITE, "salut c'est cool");
 }
 
 int		display_image(t_data *data)
 {
-	put_grid(data, 50);
-	put_all_points(data);
-	if (!mlx_put_image_to_window(data->ptr, data->win, data->img_ptr, 0, 0))
-		exit(0);
-	print_data_details(data);
  	mlx_key_hook(data->win, &key_hooks, data);
 	mlx_loop(data->ptr);
 	return (1);
@@ -48,8 +45,8 @@ void	put_all_points(t_data *data)
 		j = 0;
 		while (j < data->cols)
 		{
-			pt = (data->world_pts)[i][j];
-			pixel_put(data, (*pt)[0], (*pt)[2], WHITE);
+			pt = (data->screen_pts)[i][j];
+			pixel_put(data, (int)((*pt)[0]), (int)((*pt)[1]), WHITE);
 			++j;
 		}
 		++i;

@@ -4,7 +4,11 @@ OBJECTS =	main.o					\
 			matrix_transforms.o		\
 			vectors.o				\
 			hooks.o					\
-			display.o
+			display.o				\
+			print.o					\
+			update.o				\
+			projections.o			\
+			lines.o
 
 NAME = fdf
 

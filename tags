@@ -1,0 +1,508 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BLACK	./includes/fdf.h	/^# define BLACK /;"	d
+BLACK	includes/fdf.h	/^# define BLACK /;"	d
+BLUE	includes/fdf.h	/^# define BLUE /;"	d
+BUFF_SIZE	./libft/includes/get_next_line.h	/^# define BUFF_SIZE /;"	d
+CALLBACK_API	./includes/keys.h	/^typedef CALLBACK_API( void , FKEYProcPtr )(void);$/;"	t
+CALLBACK_API	./includes/keys.h	/^typedef CALLBACK_API( void , GetNextEventFilterProcPtr )(EventRecord *theEvent, Boolean *result);$/;"	t
+CCFRAMEWORKS	Makefile	/^CCFRAMEWORKS = -framework AppKit -framework OpenGL$/;"	m
+CCHEADERS	./libft/Makefile	/^CCHEADERS = -I .\/includes\/$/;"	m
+CCHEADERS	Makefile	/^CCHEADERS = -I.\/includes\/			\\$/;"	m
+CCLIBS	Makefile	/^CCLIBS = -L$(LIBFT) -lft			\\$/;"	m
+CCSOURCES	./libft/Makefile	/^CCSOURCES = .\/srcs\/$/;"	m
+CCSOURCES	Makefile	/^CCSOURCES = .\/srcs\/$/;"	m
+CFLAGS	./libft/Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
+DARK_GRAY	./includes/fdf.h	/^# define DARK_GRAY /;"	d
+DARK_GRAY	includes/fdf.h	/^# define DARK_GRAY /;"	d
+DOWN_KEY	./srcs/hooks.c	/^#define DOWN_KEY /;"	d	file:
+DOWN_KEY	srcs/hooks.c	/^#define DOWN_KEY /;"	d	file:
+ERR	./libft/srcs/get_next_line.c	/^#define ERR /;"	d	file:
+ESC_KEY	./srcs/hooks.c	/^#define ESC_KEY /;"	d	file:
+ESC_KEY	srcs/hooks.c	/^#define ESC_KEY /;"	d	file:
+EvQEl	./includes/keys.h	/^struct EvQEl {$/;"	s
+EvQEl	./includes/keys.h	/^typedef struct EvQEl                    EvQEl;$/;"	t	typeref:struct:EvQEl
+EvQElPtr	./includes/keys.h	/^typedef EvQEl *                         EvQElPtr;$/;"	t
+EventKind	./includes/keys.h	/^typedef UInt16                          EventKind;$/;"	t
+EventMask	./includes/keys.h	/^typedef UInt16                          EventMask;$/;"	t
+EventModifiers	./includes/keys.h	/^typedef UInt16                          EventModifiers;$/;"	t
+EventRecord	./includes/keys.h	/^struct EventRecord {$/;"	s
+EventRecord	./includes/keys.h	/^typedef struct EventRecord              EventRecord;$/;"	t	typeref:struct:EventRecord
+FDF_H	./includes/fdf.h	/^# define FDF_H$/;"	d
+FDF_H	includes/fdf.h	/^# define FDF_H$/;"	d
+FKEYUPP	./includes/keys.h	/^typedef STACK_UPP_TYPE(FKEYProcPtr)                             FKEYUPP;$/;"	t
+GET_NEXT_LINE_H	./libft/includes/get_next_line.h	/^# define GET_NEXT_LINE_H$/;"	d
+GNEFilterUPP	./includes/keys.h	/^typedef GetNextEventFilterUPP           GNEFilterUPP;$/;"	t
+GREEN	includes/fdf.h	/^# define GREEN /;"	d
+GetNextEventFilterUPP	./includes/keys.h	/^typedef STACK_UPP_TYPE(GetNextEventFilterProcPtr)               GetNextEventFilterUPP;$/;"	t
+HEADERS	./libft/Makefile	/^HEADERS = 	libft.h$/;"	m
+JUMP	./srcs/hooks.c	/^#define JUMP /;"	d	file:
+JUMP	srcs/hooks.c	/^#define JUMP /;"	d	file:
+KeyMap	./includes/keys.h	/^typedef BigEndianUInt32                 KeyMap[4];$/;"	t
+KeyMap	./includes/keys.h	/^typedef UInt32                          KeyMap[4];$/;"	t
+KeyMapByteArray	./includes/keys.h	/^typedef UInt8                           KeyMapByteArray[16];$/;"	t
+KeyTrans	./includes/keys.h	/^#define KeyTrans(/;"	d
+LEFT_KEY	./srcs/hooks.c	/^#define LEFT_KEY /;"	d	file:
+LEFT_KEY	srcs/hooks.c	/^#define LEFT_KEY /;"	d	file:
+LIBFT	Makefile	/^LIBFT = 		.\/libft\/$/;"	m
+LIBFT_H	./libft/includes/libft.h	/^# define LIBFT_H$/;"	d
+MATRICES_H	./includes/matrices.h	/^# define MATRICES_H$/;"	d
+MATRICES_H	includes/matrices.h	/^# define MATRICES_H$/;"	d
+MINILIB	Makefile	/^MINILIB = 		.\/mlx\/$/;"	m
+MININT	./libft/includes/libft.h	/^# define MININT /;"	d
+MININTSIZE	./libft/includes/libft.h	/^# define MININTSIZE /;"	d
+MININTSTR	./libft/includes/libft.h	/^# define MININTSTR /;"	d
+NAME	./libft/Makefile	/^NAME = libft.a$/;"	m
+NAME	Makefile	/^NAME = fdf$/;"	m
+OBJECTS	./libft/Makefile	/^OBJECTS =	ft_memset.o			\\$/;"	m
+OBJECTS	Makefile	/^OBJECTS =	main.o					\\$/;"	m
+RED	includes/fdf.h	/^# define RED /;"	d
+RIGHT_KEY	./srcs/hooks.c	/^#define RIGHT_KEY /;"	d	file:
+RIGHT_KEY	srcs/hooks.c	/^#define RIGHT_KEY /;"	d	file:
+SOURCES	./libft/Makefile	/^SOURCES = $(OBJECTS:%.o=$(CCSOURCES)%.c)$/;"	m
+SOURCES	Makefile	/^SOURCES = $(OBJECTS:%.o=$(CCSOURCES)%.c)$/;"	m
+UP_KEY	./srcs/hooks.c	/^#define UP_KEY /;"	d	file:
+UP_KEY	srcs/hooks.c	/^#define UP_KEY /;"	d	file:
+VECTORS_H	./includes/vectors.h	/^# define VECTORS_H$/;"	d
+VECTORS_H	includes/vectors.h	/^# define VECTORS_H$/;"	d
+WHITE	./includes/fdf.h	/^# define WHITE /;"	d
+WHITE	includes/fdf.h	/^# define WHITE /;"	d
+WIN_H	./includes/fdf.h	/^# define WIN_H /;"	d
+WIN_H	includes/fdf.h	/^# define WIN_H /;"	d
+WIN_T	./includes/fdf.h	/^# define WIN_T /;"	d
+WIN_T	includes/fdf.h	/^# define WIN_T /;"	d
+WIN_W	./includes/fdf.h	/^# define WIN_W /;"	d
+WIN_W	includes/fdf.h	/^# define WIN_W /;"	d
+__EVENTS__	./includes/keys.h	/^#define __EVENTS__$/;"	d
+activMask	./includes/keys.h	/^  activMask                     = 1 << activateEvt, \/* activate\/deactivate window*\/$/;"	e	enum:__anon2
+activateEvt	./includes/keys.h	/^  activateEvt                   = 8,$/;"	e	enum:__anon1
+activeFlag	./includes/keys.h	/^  activeFlag                    = 1 << activeFlagBit,$/;"	e	enum:__anon8
+activeFlagBit	./includes/keys.h	/^  activeFlagBit                 = 0,    \/* activate? (activateEvt and mouseDown)*\/$/;"	e	enum:__anon7
+adbAddrMask	./includes/keys.h	/^  adbAddrMask                   = 0x00FF0000,$/;"	e	enum:__anon3
+alphaLock	./includes/keys.h	/^  alphaLock                     = 1 << alphaLockBit,$/;"	e	enum:__anon8
+alphaLockBit	./includes/keys.h	/^  alphaLockBit                  = 10,   \/* alpha lock down?*\/$/;"	e	enum:__anon7
+app1Evt	./includes/keys.h	/^  app1Evt                       = 12,$/;"	e	enum:__anon15
+app1Mask	./includes/keys.h	/^  app1Mask                      = 0x1000,$/;"	e	enum:__anon15
+app2Evt	./includes/keys.h	/^  app2Evt                       = 13,$/;"	e	enum:__anon15
+app2Mask	./includes/keys.h	/^  app2Mask                      = 0x2000,$/;"	e	enum:__anon15
+app3Evt	./includes/keys.h	/^  app3Evt                       = 14,$/;"	e	enum:__anon15
+app3Mask	./includes/keys.h	/^  app3Mask                      = 0x4000,$/;"	e	enum:__anon15
+app4Evt	./includes/keys.h	/^  app4Evt                       = 15,$/;"	e	enum:__anon15
+app4Mask	./includes/keys.h	/^  app4Mask                      = 0x8000$/;"	e	enum:__anon15
+autoKey	./includes/keys.h	/^  autoKey                       = 5,$/;"	e	enum:__anon1
+autoKeyMask	./includes/keys.h	/^  autoKeyMask                   = 1 << autoKey, \/* key repeatedly held down*\/$/;"	e	enum:__anon2
+axb_matrix44f	./srcs/matrix_basics.c	/^void			axb_matrix44f(t_matrix44f *to_change, t_matrix44f *mult)$/;"	f
+axb_matrix44f	srcs/matrix_basics.c	/^void			axb_matrix44f(t_matrix44f *to_change, t_matrix44f *mult)$/;"	f
+bits_per_pixel	./includes/fdf.h	/^	int				bits_per_pixel;$/;"	m	struct:s_data
+bits_per_pixel	includes/fdf.h	/^	int				bits_per_pixel;$/;"	m	struct:s_data
+btnState	./includes/keys.h	/^  btnState                      = 1 << btnStateBit,$/;"	e	enum:__anon8
+btnStateBit	./includes/keys.h	/^  btnStateBit                   = 7,    \/* state of button?*\/$/;"	e	enum:__anon7
+buf	./libft/includes/get_next_line.h	/^	char			buf[BUFF_SIZE];$/;"	m	struct:s_buf
+cam	./includes/fdf.h	/^	t_cam			*cam;$/;"	m	struct:s_data
+cam	includes/fdf.h	/^	t_cam			*cam;$/;"	m	struct:s_data
+cam_pts	./includes/fdf.h	/^	t_vec4f			***cam_pts;$/;"	m	struct:s_data
+cam_pts	includes/fdf.h	/^	t_vec4f			***cam_pts;$/;"	m	struct:s_data
+charCodeMask	./includes/keys.h	/^  charCodeMask                  = 0x000000FF,$/;"	e	enum:__anon3
+cmdKey	./includes/keys.h	/^  cmdKey                        = 1 << cmdKeyBit,$/;"	e	enum:__anon8
+cmdKeyBit	./includes/keys.h	/^  cmdKeyBit                     = 8,    \/* command key down?*\/$/;"	e	enum:__anon7
+cols	./includes/fdf.h	/^	int				cols;$/;"	m	struct:s_data
+cols	includes/fdf.h	/^	int				cols;$/;"	m	struct:s_data
+content	./libft/includes/libft.h	/^	void				*content;$/;"	m	struct:s_list
+content_size	./libft/includes/libft.h	/^	size_t				content_size;$/;"	m	struct:s_list
+controlKey	./includes/keys.h	/^  controlKey                    = 1 << controlKeyBit,$/;"	e	enum:__anon8
+controlKeyBit	./includes/keys.h	/^  controlKeyBit                 = 12,   \/* control key down?*\/$/;"	e	enum:__anon7
+convertClipboardFlag	./includes/keys.h	/^  convertClipboardFlag          = 2     \/* Bit 1 in resume message indicates clipboard change*\/$/;"	e	enum:__anon6
+countwords	./libft/srcs/ft_strsplit.c	/^static	int	countwords(char const *s, char c)$/;"	f	file:
+diskEvt	./includes/keys.h	/^  diskEvt                       = 7,    \/* Not sent in Carbon. See kEventClassVolume in CarbonEvents.h*\/$/;"	e	enum:__anon1
+diskMask	./includes/keys.h	/^  diskMask                      = 1 << diskEvt, \/* disk inserted*\/$/;"	e	enum:__anon2
+display_image	./srcs/display.c	/^int		display_image(t_data *data)$/;"	f
+display_image	srcs/display.c	/^int		display_image(t_data *data)$/;"	f
+distance	./includes/fdf.h	/^	int				distance;$/;"	m	struct:s_cam
+distance	includes/fdf.h	/^	float			distance;$/;"	m	struct:s_cam
+driverEvt	./includes/keys.h	/^  driverEvt                     = 11,$/;"	e	enum:__anon15
+driverMask	./includes/keys.h	/^  driverMask                    = 0x0800,$/;"	e	enum:__anon15
+end	./libft/includes/get_next_line.h	/^	int				end;$/;"	m	struct:s_buf
+endian	./includes/fdf.h	/^	int				endian;$/;"	m	struct:s_data
+endian	includes/fdf.h	/^	int				endian;$/;"	m	struct:s_data
+everyEvent	./includes/keys.h	/^  everyEvent                    = 0xFFFF \/* all of the above*\/$/;"	e	enum:__anon2
+evtQMessage	./includes/keys.h	/^  unsigned long       evtQMessage;$/;"	m	struct:EvQEl
+evtQModifiers	./includes/keys.h	/^  EventModifiers      evtQModifiers;$/;"	m	struct:EvQEl
+evtQWhat	./includes/keys.h	/^  EventKind           evtQWhat;               \/* this part is identical to the EventRecord as defined above *\/$/;"	m	struct:EvQEl
+evtQWhen	./includes/keys.h	/^  UInt32              evtQWhen;$/;"	m	struct:EvQEl
+evtQWhere	./includes/keys.h	/^  Point               evtQWhere;$/;"	m	struct:EvQEl
+fd	./libft/includes/get_next_line.h	/^	int				fd;$/;"	m	struct:s_buf
+find_end	./libft/srcs/get_next_line.c	/^int				find_end(t_buf *b, char **line)$/;"	f
+ft_append	./libft/srcs/get_next_line.c	/^int				ft_append(char **adest, t_buf *b, int n, int reinit)$/;"	f
+ft_atoi	./libft/srcs/ft_atoi.c	/^int		ft_atoi(const char *str)$/;"	f
+ft_bzero	./libft/srcs/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f
+ft_intlen	./libft/srcs/ft_itoa.c	/^static	int	ft_intlen(int n)$/;"	f	file:
+ft_isalnum	./libft/srcs/ft_isalnum.c	/^int		ft_isalnum(int c)$/;"	f
+ft_isalpha	./libft/srcs/ft_isalpha.c	/^int		ft_isalpha(int c)$/;"	f
+ft_isascii	./libft/srcs/ft_isascii.c	/^int		ft_isascii(int c)$/;"	f
+ft_isdigit	./libft/srcs/ft_isdigit.c	/^int	ft_isdigit(int c)$/;"	f
+ft_isprint	./libft/srcs/ft_isprint.c	/^int		ft_isprint(int c)$/;"	f
+ft_itoa	./libft/srcs/ft_itoa.c	/^char		*ft_itoa(int n)$/;"	f
+ft_lstadd	./libft/srcs/ft_lstadd.c	/^void	ft_lstadd(t_list **alst, t_list *new)$/;"	f
+ft_lstdel	./libft/srcs/ft_lstdel.c	/^void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))$/;"	f
+ft_lstdelone	./libft/srcs/ft_lstdelone.c	/^void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))$/;"	f
+ft_lstiter	./libft/srcs/ft_lstiter.c	/^void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))$/;"	f
+ft_lstmap	./libft/srcs/ft_lstmap.c	/^t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))$/;"	f
+ft_lstnew	./libft/srcs/ft_lstnew.c	/^t_list	*ft_lstnew(void const *content, size_t content_size)$/;"	f
+ft_memalloc	./libft/srcs/ft_memalloc.c	/^void	*ft_memalloc(size_t size)$/;"	f
+ft_membcpy	./libft/srcs/ft_memmove.c	/^static	void	*ft_membcpy(void *dst, const void *src, size_t n)$/;"	f	file:
+ft_memccpy	./libft/srcs/ft_memccpy.c	/^void	*ft_memccpy(void *dst, const void *src, int c, size_t n)$/;"	f
+ft_memchr	./libft/srcs/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f
+ft_memcmp	./libft/srcs/ft_memcmp.c	/^int		ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f
+ft_memcpy	./libft/srcs/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t n)$/;"	f
+ft_memcpy	libft/srcs/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t n)$/;"	f
+ft_memdel	./libft/srcs/ft_memdel.c	/^void	ft_memdel(void **ap)$/;"	f
+ft_memmove	./libft/srcs/ft_memmove.c	/^void			*ft_memmove(void *dst, const void *src, size_t len)$/;"	f
+ft_memset	./libft/srcs/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
+ft_newbuf	./libft/srcs/get_next_line.c	/^t_buf			*ft_newbuf(t_buf **buffers, int fd)$/;"	f
+ft_putchar	./libft/srcs/ft_putchar.c	/^void	ft_putchar(char c)$/;"	f
+ft_putchar_fd	./libft/srcs/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
+ft_putendl	./libft/srcs/ft_putendl.c	/^void	ft_putendl(char const *s)$/;"	f
+ft_putendl_fd	./libft/srcs/ft_putendl_fd.c	/^void	ft_putendl_fd(char const *s, int fd)$/;"	f
+ft_putnbr	./libft/srcs/ft_putnbr.c	/^void	ft_putnbr(int n)$/;"	f
+ft_putnbr_fd	./libft/srcs/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f
+ft_putstr	./libft/srcs/ft_putstr.c	/^void	ft_putstr(char const *s)$/;"	f
+ft_putstr_fd	./libft/srcs/ft_putstr_fd.c	/^void	ft_putstr_fd(char const *s, int fd)$/;"	f
+ft_refill	./libft/srcs/get_next_line.c	/^int				ft_refill(t_buf *b, int bytes)$/;"	f
+ft_strcat	./libft/srcs/ft_strcat.c	/^char	*ft_strcat(char *s1, const char *s2)$/;"	f
+ft_strchr	./libft/srcs/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/;"	f
+ft_strclr	./libft/srcs/ft_strclr.c	/^void	ft_strclr(char *s)$/;"	f
+ft_strcmp	./libft/srcs/ft_strcmp.c	/^int		ft_strcmp(const char *s1, const char *s2)$/;"	f
+ft_strcpy	./libft/srcs/ft_strcpy.c	/^char	*ft_strcpy(char *dst, const char *src)$/;"	f
+ft_strdel	./libft/srcs/ft_strdel.c	/^void	ft_strdel(char **as)$/;"	f
+ft_strdup	./libft/srcs/ft_strdup.c	/^char	*ft_strdup(const char *s1)$/;"	f
+ft_strequ	./libft/srcs/ft_strequ.c	/^int		ft_strequ(char const *s1, char const *s2)$/;"	f
+ft_striter	./libft/srcs/ft_striter.c	/^void	ft_striter(char *s, void (*f)(char *))$/;"	f
+ft_striteri	./libft/srcs/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char *))$/;"	f
+ft_strjoin	./libft/srcs/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f
+ft_strlcat	./libft/srcs/ft_strlcat.c	/^size_t		ft_strlcat(char *dst, const char *src, size_t size)$/;"	f
+ft_strlen	./libft/srcs/ft_strlen.c	/^size_t	ft_strlen(const char *s)$/;"	f
+ft_strmap	./libft/srcs/ft_strmap.c	/^char	*ft_strmap(char const *s, char (*f)(char))$/;"	f
+ft_strmapi	./libft/srcs/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f
+ft_strncat	./libft/srcs/ft_strncat.c	/^char	*ft_strncat(char *s1, const char *s2, size_t n)$/;"	f
+ft_strncmp	./libft/srcs/ft_strncmp.c	/^int		ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f
+ft_strncpy	./libft/srcs/ft_strncpy.c	/^char	*ft_strncpy(char *dst, const char *src, size_t len)$/;"	f
+ft_strnequ	./libft/srcs/ft_strnequ.c	/^int		ft_strnequ(char const *s1, char const *s2, size_t n)$/;"	f
+ft_strnew	./libft/srcs/ft_strnew.c	/^char	*ft_strnew(size_t size)$/;"	f
+ft_strnstr	./libft/srcs/ft_strnstr.c	/^char	*ft_strnstr(const char *big, const char *little, size_t len)$/;"	f
+ft_strrchr	./libft/srcs/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f
+ft_strsplit	./libft/srcs/ft_strsplit.c	/^char		**ft_strsplit(char const *s, char c)$/;"	f
+ft_strstr	./libft/srcs/ft_strstr.c	/^char	*ft_strstr(const char *big, const char *little)$/;"	f
+ft_strsub	./libft/srcs/ft_strsub.c	/^char	*ft_strsub(char const *s, unsigned int start, size_t len)$/;"	f
+ft_strtrim	./libft/srcs/ft_strtrim.c	/^char	*ft_strtrim(char const *s)$/;"	f
+ft_tolower	./libft/srcs/ft_tolower.c	/^int		ft_tolower(int c)$/;"	f
+ft_toupper	./libft/srcs/ft_toupper.c	/^int		ft_toupper(int c)$/;"	f
+get_next_line	./libft/srcs/get_next_line.c	/^int				get_next_line(const int fd, char **line)$/;"	f
+highLevelEventMask	./includes/keys.h	/^  highLevelEventMask            = 0x0400, \/* high-level events (includes AppleEvents)*\/$/;"	e	enum:__anon2
+img_addr	./includes/fdf.h	/^	char			*img_addr;$/;"	m	struct:s_data
+img_addr	includes/fdf.h	/^	char			*img_addr;$/;"	m	struct:s_data
+img_ptr	./includes/fdf.h	/^	void			*img_ptr;$/;"	m	struct:s_data
+img_ptr	includes/fdf.h	/^	void			*img_ptr;$/;"	m	struct:s_data
+init_cam	./srcs/init.c	/^t_cam			*init_cam(t_data *data)$/;"	f
+init_cam	srcs/init.c	/^t_cam			*init_cam(t_data *data)$/;"	f
+init_data	./srcs/init.c	/^t_data				*init_data(void)$/;"	f
+init_data	srcs/init.c	/^t_data				*init_data(void)$/;"	f
+init_pts_array	./srcs/init.c	/^t_vec4f			***init_pts_array(t_data *data)$/;"	f
+init_pts_array	srcs/init.c	/^t_vec4f			***init_pts_array(t_data *data)$/;"	f
+iter	./libft/includes/get_next_line.h	/^	int				iter;$/;"	m	struct:s_buf
+kAppleLogoCharCode	./includes/keys.h	/^  kAppleLogoCharCode            = 20,   \/* glyph available only in system fonts*\/$/;"	e	enum:__anon9
+kAppleLogoUnicode	./includes/keys.h	/^  kAppleLogoUnicode             = 0xF8FF \/* Unicode APPLE LOGO*\/$/;"	e	enum:__anon10
+kBackspaceCharCode	./includes/keys.h	/^  kBackspaceCharCode            = 8,$/;"	e	enum:__anon9
+kBellCharCode	./includes/keys.h	/^  kBellCharCode                 = 7,$/;"	e	enum:__anon9
+kBulletCharCode	./includes/keys.h	/^  kBulletCharCode               = 165,$/;"	e	enum:__anon9
+kBulletUnicode	./includes/keys.h	/^  kBulletUnicode                = 0x2022, \/* Unicode BULLET*\/$/;"	e	enum:__anon10
+kCheckCharCode	./includes/keys.h	/^  kCheckCharCode                = 18,   \/* glyph available only in system fonts*\/$/;"	e	enum:__anon9
+kCheckUnicode	./includes/keys.h	/^  kCheckUnicode                 = 0x2713, \/* Unicode CHECK MARK*\/$/;"	e	enum:__anon10
+kClearCharCode	./includes/keys.h	/^  kClearCharCode                = 27,$/;"	e	enum:__anon9
+kCommandCharCode	./includes/keys.h	/^  kCommandCharCode              = 17,   \/* glyph available only in system fonts*\/$/;"	e	enum:__anon9
+kCommandUnicode	./includes/keys.h	/^  kCommandUnicode               = 0x2318, \/* Unicode PLACE OF INTEREST SIGN*\/$/;"	e	enum:__anon10
+kControlUnicode	./includes/keys.h	/^  kControlUnicode               = 0x2303, \/* Unicode UP ARROWHEAD*\/$/;"	e	enum:__anon10
+kDeleteCharCode	./includes/keys.h	/^  kDeleteCharCode               = 127,$/;"	e	enum:__anon9
+kDiamondCharCode	./includes/keys.h	/^  kDiamondCharCode              = 19,   \/* glyph available only in system fonts*\/$/;"	e	enum:__anon9
+kDiamondUnicode	./includes/keys.h	/^  kDiamondUnicode               = 0x25C6, \/* Unicode BLACK DIAMOND*\/$/;"	e	enum:__anon10
+kDownArrowCharCode	./includes/keys.h	/^  kDownArrowCharCode            = 31,$/;"	e	enum:__anon9
+kEndCharCode	./includes/keys.h	/^  kEndCharCode                  = 4,$/;"	e	enum:__anon9
+kEnterCharCode	./includes/keys.h	/^  kEnterCharCode                = 3,$/;"	e	enum:__anon9
+kEscapeCharCode	./includes/keys.h	/^  kEscapeCharCode               = 27,$/;"	e	enum:__anon9
+kFormFeedCharCode	./includes/keys.h	/^  kFormFeedCharCode             = 12,$/;"	e	enum:__anon9
+kFunctionKeyCharCode	./includes/keys.h	/^  kFunctionKeyCharCode          = 16,$/;"	e	enum:__anon9
+kHelpCharCode	./includes/keys.h	/^  kHelpCharCode                 = 5,$/;"	e	enum:__anon9
+kHighLevelEvent	./includes/keys.h	/^  kHighLevelEvent               = 23$/;"	e	enum:__anon1
+kHomeCharCode	./includes/keys.h	/^  kHomeCharCode                 = 1,$/;"	e	enum:__anon9
+kLeftArrowCharCode	./includes/keys.h	/^  kLeftArrowCharCode            = 28,$/;"	e	enum:__anon9
+kLineFeedCharCode	./includes/keys.h	/^  kLineFeedCharCode             = 10,$/;"	e	enum:__anon9
+kNonBreakingSpaceCharCode	./includes/keys.h	/^  kNonBreakingSpaceCharCode     = 202$/;"	e	enum:__anon9
+kNullCharCode	./includes/keys.h	/^  kNullCharCode                 = 0,$/;"	e	enum:__anon9
+kOptionUnicode	./includes/keys.h	/^  kOptionUnicode                = 0x2325, \/* Unicode OPTION KEY*\/$/;"	e	enum:__anon10
+kPageDownCharCode	./includes/keys.h	/^  kPageDownCharCode             = 12,$/;"	e	enum:__anon9
+kPageUpCharCode	./includes/keys.h	/^  kPageUpCharCode               = 11,$/;"	e	enum:__anon9
+kPencilLeftUnicode	./includes/keys.h	/^  kPencilLeftUnicode            = 0xF802, \/* Unicode LOWER LEFT PENCIL; available in Mac OS X 10.3 and later*\/$/;"	e	enum:__anon10
+kPencilUnicode	./includes/keys.h	/^  kPencilUnicode                = 0x270E, \/* Unicode LOWER RIGHT PENCIL; actually pointed left until Mac OS X 10.3*\/$/;"	e	enum:__anon10
+kReturnCharCode	./includes/keys.h	/^  kReturnCharCode               = 13,$/;"	e	enum:__anon9
+kRightArrowCharCode	./includes/keys.h	/^  kRightArrowCharCode           = 29,$/;"	e	enum:__anon9
+kShiftUnicode	./includes/keys.h	/^  kShiftUnicode                 = 0x21E7, \/* Unicode UPWARDS WHITE ARROW*\/$/;"	e	enum:__anon10
+kSpaceCharCode	./includes/keys.h	/^  kSpaceCharCode                = 32,$/;"	e	enum:__anon9
+kTabCharCode	./includes/keys.h	/^  kTabCharCode                  = 9,$/;"	e	enum:__anon9
+kUpArrowCharCode	./includes/keys.h	/^  kUpArrowCharCode              = 30,$/;"	e	enum:__anon9
+kVK_ANSI_0	./includes/keys.h	/^  kVK_ANSI_0                    = 0x1D,$/;"	e	enum:__anon11
+kVK_ANSI_1	./includes/keys.h	/^  kVK_ANSI_1                    = 0x12,$/;"	e	enum:__anon11
+kVK_ANSI_2	./includes/keys.h	/^  kVK_ANSI_2                    = 0x13,$/;"	e	enum:__anon11
+kVK_ANSI_3	./includes/keys.h	/^  kVK_ANSI_3                    = 0x14,$/;"	e	enum:__anon11
+kVK_ANSI_4	./includes/keys.h	/^  kVK_ANSI_4                    = 0x15,$/;"	e	enum:__anon11
+kVK_ANSI_5	./includes/keys.h	/^  kVK_ANSI_5                    = 0x17,$/;"	e	enum:__anon11
+kVK_ANSI_6	./includes/keys.h	/^  kVK_ANSI_6                    = 0x16,$/;"	e	enum:__anon11
+kVK_ANSI_7	./includes/keys.h	/^  kVK_ANSI_7                    = 0x1A,$/;"	e	enum:__anon11
+kVK_ANSI_8	./includes/keys.h	/^  kVK_ANSI_8                    = 0x1C,$/;"	e	enum:__anon11
+kVK_ANSI_9	./includes/keys.h	/^  kVK_ANSI_9                    = 0x19,$/;"	e	enum:__anon11
+kVK_ANSI_A	./includes/keys.h	/^  kVK_ANSI_A                    = 0x00,$/;"	e	enum:__anon11
+kVK_ANSI_B	./includes/keys.h	/^  kVK_ANSI_B                    = 0x0B,$/;"	e	enum:__anon11
+kVK_ANSI_Backslash	./includes/keys.h	/^  kVK_ANSI_Backslash            = 0x2A,$/;"	e	enum:__anon11
+kVK_ANSI_C	./includes/keys.h	/^  kVK_ANSI_C                    = 0x08,$/;"	e	enum:__anon11
+kVK_ANSI_Comma	./includes/keys.h	/^  kVK_ANSI_Comma                = 0x2B,$/;"	e	enum:__anon11
+kVK_ANSI_D	./includes/keys.h	/^  kVK_ANSI_D                    = 0x02,$/;"	e	enum:__anon11
+kVK_ANSI_E	./includes/keys.h	/^  kVK_ANSI_E                    = 0x0E,$/;"	e	enum:__anon11
+kVK_ANSI_Equal	./includes/keys.h	/^  kVK_ANSI_Equal                = 0x18,$/;"	e	enum:__anon11
+kVK_ANSI_F	./includes/keys.h	/^  kVK_ANSI_F                    = 0x03,$/;"	e	enum:__anon11
+kVK_ANSI_G	./includes/keys.h	/^  kVK_ANSI_G                    = 0x05,$/;"	e	enum:__anon11
+kVK_ANSI_Grave	./includes/keys.h	/^  kVK_ANSI_Grave                = 0x32,$/;"	e	enum:__anon11
+kVK_ANSI_H	./includes/keys.h	/^  kVK_ANSI_H                    = 0x04,$/;"	e	enum:__anon11
+kVK_ANSI_I	./includes/keys.h	/^  kVK_ANSI_I                    = 0x22,$/;"	e	enum:__anon11
+kVK_ANSI_J	./includes/keys.h	/^  kVK_ANSI_J                    = 0x26,$/;"	e	enum:__anon11
+kVK_ANSI_K	./includes/keys.h	/^  kVK_ANSI_K                    = 0x28,$/;"	e	enum:__anon11
+kVK_ANSI_Keypad0	./includes/keys.h	/^  kVK_ANSI_Keypad0              = 0x52,$/;"	e	enum:__anon11
+kVK_ANSI_Keypad1	./includes/keys.h	/^  kVK_ANSI_Keypad1              = 0x53,$/;"	e	enum:__anon11
+kVK_ANSI_Keypad2	./includes/keys.h	/^  kVK_ANSI_Keypad2              = 0x54,$/;"	e	enum:__anon11
+kVK_ANSI_Keypad3	./includes/keys.h	/^  kVK_ANSI_Keypad3              = 0x55,$/;"	e	enum:__anon11
+kVK_ANSI_Keypad4	./includes/keys.h	/^  kVK_ANSI_Keypad4              = 0x56,$/;"	e	enum:__anon11
+kVK_ANSI_Keypad5	./includes/keys.h	/^  kVK_ANSI_Keypad5              = 0x57,$/;"	e	enum:__anon11
+kVK_ANSI_Keypad6	./includes/keys.h	/^  kVK_ANSI_Keypad6              = 0x58,$/;"	e	enum:__anon11
+kVK_ANSI_Keypad7	./includes/keys.h	/^  kVK_ANSI_Keypad7              = 0x59,$/;"	e	enum:__anon11
+kVK_ANSI_Keypad8	./includes/keys.h	/^  kVK_ANSI_Keypad8              = 0x5B,$/;"	e	enum:__anon11
+kVK_ANSI_Keypad9	./includes/keys.h	/^  kVK_ANSI_Keypad9              = 0x5C$/;"	e	enum:__anon11
+kVK_ANSI_KeypadClear	./includes/keys.h	/^  kVK_ANSI_KeypadClear          = 0x47,$/;"	e	enum:__anon11
+kVK_ANSI_KeypadDecimal	./includes/keys.h	/^  kVK_ANSI_KeypadDecimal        = 0x41,$/;"	e	enum:__anon11
+kVK_ANSI_KeypadDivide	./includes/keys.h	/^  kVK_ANSI_KeypadDivide         = 0x4B,$/;"	e	enum:__anon11
+kVK_ANSI_KeypadEnter	./includes/keys.h	/^  kVK_ANSI_KeypadEnter          = 0x4C,$/;"	e	enum:__anon11
+kVK_ANSI_KeypadEquals	./includes/keys.h	/^  kVK_ANSI_KeypadEquals         = 0x51,$/;"	e	enum:__anon11
+kVK_ANSI_KeypadMinus	./includes/keys.h	/^  kVK_ANSI_KeypadMinus          = 0x4E,$/;"	e	enum:__anon11
+kVK_ANSI_KeypadMultiply	./includes/keys.h	/^  kVK_ANSI_KeypadMultiply       = 0x43,$/;"	e	enum:__anon11
+kVK_ANSI_KeypadPlus	./includes/keys.h	/^  kVK_ANSI_KeypadPlus           = 0x45,$/;"	e	enum:__anon11
+kVK_ANSI_L	./includes/keys.h	/^  kVK_ANSI_L                    = 0x25,$/;"	e	enum:__anon11
+kVK_ANSI_LeftBracket	./includes/keys.h	/^  kVK_ANSI_LeftBracket          = 0x21,$/;"	e	enum:__anon11
+kVK_ANSI_M	./includes/keys.h	/^  kVK_ANSI_M                    = 0x2E,$/;"	e	enum:__anon11
+kVK_ANSI_Minus	./includes/keys.h	/^  kVK_ANSI_Minus                = 0x1B,$/;"	e	enum:__anon11
+kVK_ANSI_N	./includes/keys.h	/^  kVK_ANSI_N                    = 0x2D,$/;"	e	enum:__anon11
+kVK_ANSI_O	./includes/keys.h	/^  kVK_ANSI_O                    = 0x1F,$/;"	e	enum:__anon11
+kVK_ANSI_P	./includes/keys.h	/^  kVK_ANSI_P                    = 0x23,$/;"	e	enum:__anon11
+kVK_ANSI_Period	./includes/keys.h	/^  kVK_ANSI_Period               = 0x2F,$/;"	e	enum:__anon11
+kVK_ANSI_Q	./includes/keys.h	/^  kVK_ANSI_Q                    = 0x0C,$/;"	e	enum:__anon11
+kVK_ANSI_Quote	./includes/keys.h	/^  kVK_ANSI_Quote                = 0x27,$/;"	e	enum:__anon11
+kVK_ANSI_R	./includes/keys.h	/^  kVK_ANSI_R                    = 0x0F,$/;"	e	enum:__anon11
+kVK_ANSI_RightBracket	./includes/keys.h	/^  kVK_ANSI_RightBracket         = 0x1E,$/;"	e	enum:__anon11
+kVK_ANSI_S	./includes/keys.h	/^  kVK_ANSI_S                    = 0x01,$/;"	e	enum:__anon11
+kVK_ANSI_Semicolon	./includes/keys.h	/^  kVK_ANSI_Semicolon            = 0x29,$/;"	e	enum:__anon11
+kVK_ANSI_Slash	./includes/keys.h	/^  kVK_ANSI_Slash                = 0x2C,$/;"	e	enum:__anon11
+kVK_ANSI_T	./includes/keys.h	/^  kVK_ANSI_T                    = 0x11,$/;"	e	enum:__anon11
+kVK_ANSI_U	./includes/keys.h	/^  kVK_ANSI_U                    = 0x20,$/;"	e	enum:__anon11
+kVK_ANSI_V	./includes/keys.h	/^  kVK_ANSI_V                    = 0x09,$/;"	e	enum:__anon11
+kVK_ANSI_W	./includes/keys.h	/^  kVK_ANSI_W                    = 0x0D,$/;"	e	enum:__anon11
+kVK_ANSI_X	./includes/keys.h	/^  kVK_ANSI_X                    = 0x07,$/;"	e	enum:__anon11
+kVK_ANSI_Y	./includes/keys.h	/^  kVK_ANSI_Y                    = 0x10,$/;"	e	enum:__anon11
+kVK_ANSI_Z	./includes/keys.h	/^  kVK_ANSI_Z                    = 0x06,$/;"	e	enum:__anon11
+kVK_CapsLock	./includes/keys.h	/^  kVK_CapsLock                  = 0x39,$/;"	e	enum:__anon12
+kVK_Command	./includes/keys.h	/^  kVK_Command                   = 0x37,$/;"	e	enum:__anon12
+kVK_Control	./includes/keys.h	/^  kVK_Control                   = 0x3B,$/;"	e	enum:__anon12
+kVK_Delete	./includes/keys.h	/^  kVK_Delete                    = 0x33,$/;"	e	enum:__anon12
+kVK_DownArrow	./includes/keys.h	/^  kVK_DownArrow                 = 0x7D,$/;"	e	enum:__anon12
+kVK_End	./includes/keys.h	/^  kVK_End                       = 0x77,$/;"	e	enum:__anon12
+kVK_Escape	./includes/keys.h	/^  kVK_Escape                    = 0x35,$/;"	e	enum:__anon12
+kVK_F1	./includes/keys.h	/^  kVK_F1                        = 0x7A,$/;"	e	enum:__anon12
+kVK_F10	./includes/keys.h	/^  kVK_F10                       = 0x6D,$/;"	e	enum:__anon12
+kVK_F11	./includes/keys.h	/^  kVK_F11                       = 0x67,$/;"	e	enum:__anon12
+kVK_F12	./includes/keys.h	/^  kVK_F12                       = 0x6F,$/;"	e	enum:__anon12
+kVK_F13	./includes/keys.h	/^  kVK_F13                       = 0x69,$/;"	e	enum:__anon12
+kVK_F14	./includes/keys.h	/^  kVK_F14                       = 0x6B,$/;"	e	enum:__anon12
+kVK_F15	./includes/keys.h	/^  kVK_F15                       = 0x71,$/;"	e	enum:__anon12
+kVK_F16	./includes/keys.h	/^  kVK_F16                       = 0x6A,$/;"	e	enum:__anon12
+kVK_F17	./includes/keys.h	/^  kVK_F17                       = 0x40,$/;"	e	enum:__anon12
+kVK_F18	./includes/keys.h	/^  kVK_F18                       = 0x4F,$/;"	e	enum:__anon12
+kVK_F19	./includes/keys.h	/^  kVK_F19                       = 0x50,$/;"	e	enum:__anon12
+kVK_F2	./includes/keys.h	/^  kVK_F2                        = 0x78,$/;"	e	enum:__anon12
+kVK_F20	./includes/keys.h	/^  kVK_F20                       = 0x5A,$/;"	e	enum:__anon12
+kVK_F3	./includes/keys.h	/^  kVK_F3                        = 0x63,$/;"	e	enum:__anon12
+kVK_F4	./includes/keys.h	/^  kVK_F4                        = 0x76,$/;"	e	enum:__anon12
+kVK_F5	./includes/keys.h	/^  kVK_F5                        = 0x60,$/;"	e	enum:__anon12
+kVK_F6	./includes/keys.h	/^  kVK_F6                        = 0x61,$/;"	e	enum:__anon12
+kVK_F7	./includes/keys.h	/^  kVK_F7                        = 0x62,$/;"	e	enum:__anon12
+kVK_F8	./includes/keys.h	/^  kVK_F8                        = 0x64,$/;"	e	enum:__anon12
+kVK_F9	./includes/keys.h	/^  kVK_F9                        = 0x65,$/;"	e	enum:__anon12
+kVK_ForwardDelete	./includes/keys.h	/^  kVK_ForwardDelete             = 0x75,$/;"	e	enum:__anon12
+kVK_Function	./includes/keys.h	/^  kVK_Function                  = 0x3F,$/;"	e	enum:__anon12
+kVK_Help	./includes/keys.h	/^  kVK_Help                      = 0x72,$/;"	e	enum:__anon12
+kVK_Home	./includes/keys.h	/^  kVK_Home                      = 0x73,$/;"	e	enum:__anon12
+kVK_ISO_Section	./includes/keys.h	/^  kVK_ISO_Section               = 0x0A$/;"	e	enum:__anon13
+kVK_JIS_Eisu	./includes/keys.h	/^  kVK_JIS_Eisu                  = 0x66,$/;"	e	enum:__anon14
+kVK_JIS_Kana	./includes/keys.h	/^  kVK_JIS_Kana                  = 0x68$/;"	e	enum:__anon14
+kVK_JIS_KeypadComma	./includes/keys.h	/^  kVK_JIS_KeypadComma           = 0x5F,$/;"	e	enum:__anon14
+kVK_JIS_Underscore	./includes/keys.h	/^  kVK_JIS_Underscore            = 0x5E,$/;"	e	enum:__anon14
+kVK_JIS_Yen	./includes/keys.h	/^  kVK_JIS_Yen                   = 0x5D,$/;"	e	enum:__anon14
+kVK_LeftArrow	./includes/keys.h	/^  kVK_LeftArrow                 = 0x7B,$/;"	e	enum:__anon12
+kVK_Mute	./includes/keys.h	/^  kVK_Mute                      = 0x4A,$/;"	e	enum:__anon12
+kVK_Option	./includes/keys.h	/^  kVK_Option                    = 0x3A,$/;"	e	enum:__anon12
+kVK_PageDown	./includes/keys.h	/^  kVK_PageDown                  = 0x79,$/;"	e	enum:__anon12
+kVK_PageUp	./includes/keys.h	/^  kVK_PageUp                    = 0x74,$/;"	e	enum:__anon12
+kVK_Return	./includes/keys.h	/^  kVK_Return                    = 0x24,$/;"	e	enum:__anon12
+kVK_RightArrow	./includes/keys.h	/^  kVK_RightArrow                = 0x7C,$/;"	e	enum:__anon12
+kVK_RightControl	./includes/keys.h	/^  kVK_RightControl              = 0x3E,$/;"	e	enum:__anon12
+kVK_RightOption	./includes/keys.h	/^  kVK_RightOption               = 0x3D,$/;"	e	enum:__anon12
+kVK_RightShift	./includes/keys.h	/^  kVK_RightShift                = 0x3C,$/;"	e	enum:__anon12
+kVK_Shift	./includes/keys.h	/^  kVK_Shift                     = 0x38,$/;"	e	enum:__anon12
+kVK_Space	./includes/keys.h	/^  kVK_Space                     = 0x31,$/;"	e	enum:__anon12
+kVK_Tab	./includes/keys.h	/^  kVK_Tab                       = 0x30,$/;"	e	enum:__anon12
+kVK_UpArrow	./includes/keys.h	/^  kVK_UpArrow                   = 0x7E$/;"	e	enum:__anon12
+kVK_VolumeDown	./includes/keys.h	/^  kVK_VolumeDown                = 0x49,$/;"	e	enum:__anon12
+kVK_VolumeUp	./includes/keys.h	/^  kVK_VolumeUp                  = 0x48,$/;"	e	enum:__anon12
+kVerticalTabCharCode	./includes/keys.h	/^  kVerticalTabCharCode          = 11,$/;"	e	enum:__anon9
+keyCodeMask	./includes/keys.h	/^  keyCodeMask                   = 0x0000FF00,$/;"	e	enum:__anon3
+keyDown	./includes/keys.h	/^  keyDown                       = 3,$/;"	e	enum:__anon1
+keyDownMask	./includes/keys.h	/^  keyDownMask                   = 1 << keyDown, \/* key pressed*\/$/;"	e	enum:__anon2
+keyUp	./includes/keys.h	/^  keyUp                         = 4,$/;"	e	enum:__anon1
+keyUpMask	./includes/keys.h	/^  keyUpMask                     = 1 << keyUp, \/* key released*\/$/;"	e	enum:__anon2
+key_hooks	./srcs/hooks.c	/^int		key_hooks(int keycode, void *data)$/;"	f
+key_hooks	srcs/hooks.c	/^int		key_hooks(int keycode, void *data)$/;"	f
+lines	./includes/fdf.h	/^	int				lines;$/;"	m	struct:s_data
+lines	includes/fdf.h	/^	int				lines;$/;"	m	struct:s_data
+m44f_x_vec4f	./srcs/vectors.c	/^void				m44f_x_vec4f(t_matrix44f *m, t_vec4f *v)$/;"	f
+m44f_x_vec4f_to	./srcs/vectors.c	/^void				m44f_x_vec4f_to(t_vec4f *dest, t_matrix44f *m, t_vec4f *v)$/;"	f
+mDownMask	./includes/keys.h	/^  mDownMask                     = 1 << mouseDown, \/* mouse button pressed*\/$/;"	e	enum:__anon2
+mUpMask	./includes/keys.h	/^  mUpMask                       = 1 << mouseUp, \/* mouse button released*\/$/;"	e	enum:__anon2
+main	./srcs/main.c	/^int		main(void)$/;"	f
+main	srcs/main.c	/^int		main(void)$/;"	f
+matrix44f_cpy	srcs/matrix_basics.c	/^t_matrix44f			*matrix44f_cpy(t_matrix44f *dest, t_matrix44f *src)$/;"	f
+matrix44f_dup	./srcs/matrix_basics.c	/^t_matrix44f			*matrix44f_dup(t_matrix44f *a)$/;"	f
+matrix44f_dup	srcs/matrix_basics.c	/^t_matrix44f			*matrix44f_dup(t_matrix44f *a)$/;"	f
+matrix44f_identity	./srcs/matrix_basics.c	/^t_matrix44f			*matrix44f_identity(void)$/;"	f
+matrix44f_identity	srcs/matrix_basics.c	/^t_matrix44f			*matrix44f_identity(void)$/;"	f
+matrix44f_rotation_x	./srcs/matrix_transforms.c	/^void				matrix44f_rotation_x(t_matrix44f *a, float radians)$/;"	f
+matrix44f_rotation_x	srcs/matrix_transforms.c	/^void				matrix44f_rotation_x(t_matrix44f *a, float radians)$/;"	f
+matrix44f_rotation_y	./srcs/matrix_transforms.c	/^void				matrix44f_rotation_y(t_matrix44f *a, float radians)$/;"	f
+matrix44f_rotation_y	srcs/matrix_transforms.c	/^void				matrix44f_rotation_y(t_matrix44f *a, float radians)$/;"	f
+matrix44f_rotation_z	./srcs/matrix_transforms.c	/^void				matrix44f_rotation_z(t_matrix44f *a, float radians)$/;"	f
+matrix44f_rotation_z	srcs/matrix_transforms.c	/^void				matrix44f_rotation_z(t_matrix44f *a, float radians)$/;"	f
+matrix44f_scale	./srcs/matrix_transforms.c	/^void				matrix44f_scale(t_matrix44f *a, float x, float y, float z)$/;"	f
+matrix44f_scale	srcs/matrix_transforms.c	/^void				matrix44f_scale(t_matrix44f *a, float x, float y, float z)$/;"	f
+matrix44f_translation	./srcs/matrix_transforms.c	/^void				matrix44f_translation(t_matrix44f *a, float x, float y, float z)$/;"	f
+matrix44f_translation	srcs/matrix_transforms.c	/^void				matrix44f_translation(t_matrix44f *a, float x, float y, float z)$/;"	f
+message	./includes/keys.h	/^  unsigned long       message;$/;"	m	struct:EventRecord
+modifiers	./includes/keys.h	/^  EventModifiers      modifiers;$/;"	m	struct:EventRecord
+mouseDown	./includes/keys.h	/^  mouseDown                     = 1,$/;"	e	enum:__anon1
+mouseMovedMessage	./includes/keys.h	/^  mouseMovedMessage             = 0x00FA,$/;"	e	enum:__anon4
+mouseUp	./includes/keys.h	/^  mouseUp                       = 2,$/;"	e	enum:__anon1
+networkEvt	./includes/keys.h	/^  networkEvt                    = 10,$/;"	e	enum:__anon15
+networkMask	./includes/keys.h	/^  networkMask                   = 0x0400,$/;"	e	enum:__anon15
+next	./libft/includes/get_next_line.h	/^	struct s_buf	*next;$/;"	m	struct:s_buf	typeref:struct:s_buf::s_buf
+next	./libft/includes/libft.h	/^	struct s_list		*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
+nullEvent	./includes/keys.h	/^  nullEvent                     = 0,$/;"	e	enum:__anon1
+optionKey	./includes/keys.h	/^  optionKey                     = 1 << optionKeyBit,$/;"	e	enum:__anon8
+optionKeyBit	./includes/keys.h	/^  optionKeyBit                  = 11,   \/* option key down?*\/$/;"	e	enum:__anon7
+ortho_proj	./includes/fdf.h	/^	t_matrix44f		*ortho_proj;$/;"	m	struct:s_cam
+ortho_proj	includes/fdf.h	/^	t_matrix44f		*ortho_proj;$/;"	m	struct:s_cam
+osEvt	./includes/keys.h	/^  osEvt                         = 15,$/;"	e	enum:__anon1
+osEvtMessageMask	./includes/keys.h	/^  osEvtMessageMask              = (UInt32)0xFF000000$/;"	e	enum:__anon3
+osMask	./includes/keys.h	/^  osMask                        = 1 << osEvt, \/* operating system events (suspend, resume)*\/$/;"	e	enum:__anon2
+perspect_proj	./includes/fdf.h	/^	t_matrix44f		*perspect_proj;$/;"	m	struct:s_cam
+perspect_proj	includes/fdf.h	/^	t_matrix44f		*perspect_proj;$/;"	m	struct:s_cam
+pixel_put	./srcs/display.c	/^void	pixel_put(t_data *data, int x, int y, int color)$/;"	f
+pixel_put	srcs/display.c	/^void	pixel_put(t_data *data, int x, int y, int color)$/;"	f
+print_data_details	./srcs/display.c	/^void	print_data_details(t_data *data)$/;"	f
+print_data_details	srcs/display.c	/^void	print_data_details(t_data *data)$/;"	f
+print_matrix	./srcs/print.c	/^void				print_matrix(t_matrix44f *a)$/;"	f
+print_matrix	srcs/print.c	/^void				print_matrix(t_matrix44f *a)$/;"	f
+print_point	./srcs/print.c	/^void	print_point(t_vec4f *pt)$/;"	f
+print_point	srcs/print.c	/^void	print_point(t_vec4f *pt)$/;"	f
+print_points_array	./srcs/print.c	/^void	print_points_array(t_data *data, t_vec4f ***a)$/;"	f
+print_points_array	srcs/print.c	/^void	print_points_array(t_data *data, t_vec4f ***a)$/;"	f
+ptr	./includes/fdf.h	/^	void			*ptr;$/;"	m	struct:s_data
+ptr	includes/fdf.h	/^	void			*ptr;$/;"	m	struct:s_data
+put_all_points	./srcs/display.c	/^void	put_all_points(t_data *data)$/;"	f
+put_all_points	srcs/display.c	/^void	put_all_points(t_data *data)$/;"	f
+put_grid	./srcs/display.c	/^void	put_grid(t_data *data, int step)$/;"	f
+put_grid	srcs/display.c	/^void	put_grid(t_data *data, int step)$/;"	f
+qLink	./includes/keys.h	/^  QElemPtr            qLink;$/;"	m	struct:EvQEl
+qType	./includes/keys.h	/^  SInt16              qType;$/;"	m	struct:EvQEl
+resumeFlag	./includes/keys.h	/^  resumeFlag                    = 1     \/* Bit 0 of message indicates resume vs suspend*\/$/;"	e	enum:__anon5
+rightControlKey	./includes/keys.h	/^  rightControlKey               = 1 << rightControlKeyBit \/* Not supported on Mac OS X.*\/$/;"	e	enum:__anon8
+rightControlKeyBit	./includes/keys.h	/^  rightControlKeyBit            = 15    \/* right Control key down? Not supported on Mac OS X.*\/$/;"	e	enum:__anon7
+rightOptionKey	./includes/keys.h	/^  rightOptionKey                = 1 << rightOptionKeyBit, \/* Not supported on Mac OS X.*\/$/;"	e	enum:__anon8
+rightOptionKeyBit	./includes/keys.h	/^  rightOptionKeyBit             = 14,   \/* right Option key down? Not supported on Mac OS X.*\/$/;"	e	enum:__anon7
+rightShiftKey	./includes/keys.h	/^  rightShiftKey                 = 1 << rightShiftKeyBit, \/* Not supported on Mac OS X.*\/$/;"	e	enum:__anon8
+rightShiftKeyBit	./includes/keys.h	/^  rightShiftKeyBit              = 13,   \/* right shift key down? Not supported on Mac OS X.*\/$/;"	e	enum:__anon7
+s_buf	./libft/includes/get_next_line.h	/^typedef	struct		s_buf$/;"	s
+s_cam	./includes/fdf.h	/^typedef struct		s_cam$/;"	s
+s_cam	includes/fdf.h	/^typedef struct		s_cam$/;"	s
+s_data	./includes/fdf.h	/^typedef struct		s_data$/;"	s
+s_data	includes/fdf.h	/^typedef struct		s_data$/;"	s
+s_list	./libft/includes/libft.h	/^typedef	struct			s_list$/;"	s
+screen_pts	./includes/fdf.h	/^	t_vec4f			***screen_pts;$/;"	m	struct:s_data
+screen_pts	includes/fdf.h	/^	t_vec4f			***screen_pts;$/;"	m	struct:s_data
+shiftKey	./includes/keys.h	/^  shiftKey                      = 1 << shiftKeyBit,$/;"	e	enum:__anon8
+shiftKeyBit	./includes/keys.h	/^  shiftKeyBit                   = 9,    \/* shift key down?*\/$/;"	e	enum:__anon7
+size_line	./includes/fdf.h	/^	int				size_line;$/;"	m	struct:s_data
+size_line	includes/fdf.h	/^	int				size_line;$/;"	m	struct:s_data
+suspendResumeMessage	./includes/keys.h	/^  suspendResumeMessage          = 0x0001$/;"	e	enum:__anon4
+t_buf	./libft/includes/get_next_line.h	/^}					t_buf;$/;"	t	typeref:struct:s_buf
+t_cam	./includes/fdf.h	/^}					t_cam;$/;"	t	typeref:struct:s_cam
+t_cam	includes/fdf.h	/^}					t_cam;$/;"	t	typeref:struct:s_cam
+t_data	./includes/fdf.h	/^}					t_data;$/;"	t	typeref:struct:s_data
+t_data	includes/fdf.h	/^}					t_data;$/;"	t	typeref:struct:s_data
+t_list	./libft/includes/libft.h	/^}						t_list;$/;"	t	typeref:struct:s_list
+t_matrix44f	./includes/matrices.h	/^typedef	float		t_matrix44f[4][4];$/;"	t
+t_matrix44f	includes/matrices.h	/^typedef	float		t_matrix44f[4][4];$/;"	t
+t_vec4f	./includes/vectors.h	/^typedef float		t_vec4f[4];$/;"	t
+t_vec4f	includes/vectors.h	/^typedef float		t_vec4f[4];$/;"	t
+theta	./includes/fdf.h	/^	float			theta;$/;"	m	struct:s_cam
+theta	includes/fdf.h	/^	float			theta;$/;"	m	struct:s_cam
+trace_line	srcs/lines.c	/^void	trace_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
+trace_v_line	srcs/lines.c	/^void	trace_v_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
+updateEvt	./includes/keys.h	/^  updateEvt                     = 6,$/;"	e	enum:__anon1
+updateMask	./includes/keys.h	/^  updateMask                    = 1 << updateEvt, \/* window needs updating*\/$/;"	e	enum:__anon2
+update_cam_points	./srcs/update.c	/^void	update_cam_points(t_data *data)$/;"	f
+update_cam_points	srcs/update.c	/^void	update_cam_points(t_data *data)$/;"	f
+update_camera	./srcs/update.c	/^void	update_camera(t_data *data)$/;"	f
+update_camera	srcs/update.c	/^void	update_camera(t_data *data)$/;"	f
+update_proj_orth_matrix	./srcs/projections.c	/^void				update_proj_orth_matrix(t_data *data)$/;"	f
+update_proj_orth_matrix	srcs/projections.c	/^void				update_proj_orth_matrix(t_data *data)$/;"	f
+update_proj_perspect_matrix	./srcs/projections.c	/^void				update_proj_perspect_matrix(t_data *data)$/;"	f
+update_proj_perspect_matrix	srcs/projections.c	/^void				update_proj_perspect_matrix(t_data *data)$/;"	f
+update_screen_points	./srcs/update.c	/^void	update_screen_points(t_data *data)$/;"	f
+update_screen_points	srcs/update.c	/^void	update_screen_points(t_data *data)$/;"	f
+vec4f_dup	./srcs/vectors.c	/^t_vec4f				*vec4f_dup(t_vec4f *v)$/;"	f
+vec4f_new	./srcs/vectors.c	/^t_vec4f				*vec4f_new(float x, float y, float z, float w)$/;"	f
+what	./includes/keys.h	/^  EventKind           what;$/;"	m	struct:EventRecord
+when	./includes/keys.h	/^  UInt32              when;$/;"	m	struct:EventRecord
+where	./includes/keys.h	/^  Point               where;$/;"	m	struct:EventRecord
+win	./includes/fdf.h	/^	void			*win;$/;"	m	struct:s_data
+win	includes/fdf.h	/^	void			*win;$/;"	m	struct:s_data
+world_pts	./includes/fdf.h	/^	t_vec4f			***world_pts;$/;"	m	struct:s_data
+world_pts	includes/fdf.h	/^	t_vec4f			***world_pts;$/;"	m	struct:s_data
+wtoc	./includes/fdf.h	/^	t_matrix44f		*wtoc;$/;"	m	struct:s_cam
+wtoc	includes/fdf.h	/^	t_matrix44f		*wtoc;$/;"	m	struct:s_cam
+xy_angle	./includes/fdf.h	/^	float			xy_angle;$/;"	m	struct:s_cam
+xy_angle	includes/fdf.h	/^	float			xy_angle;$/;"	m	struct:s_cam
+xz_angle	./includes/fdf.h	/^	float			xz_angle;$/;"	m	struct:s_cam
+xz_angle	includes/fdf.h	/^	float			xz_angle;$/;"	m	struct:s_cam
+zbuffer	./includes/fdf.h	/^	float			*zbuffer;$/;"	m	struct:s_data
+zbuffer	includes/fdf.h	/^	float			*zbuffer;$/;"	m	struct:s_data
+zfar	./includes/fdf.h	/^	float			zfar;$/;"	m	struct:s_cam
+zfar	includes/fdf.h	/^	float			zfar;$/;"	m	struct:s_cam
+znear	./includes/fdf.h	/^	float			znear;$/;"	m	struct:s_cam
+znear	includes/fdf.h	/^	float			znear;$/;"	m	struct:s_cam

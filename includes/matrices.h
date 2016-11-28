@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 19:58:28 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/25 20:31:34 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/28 12:50:17 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ typedef	float		t_matrix44f[4][4];
 
 t_matrix44f			*matrix44f_identity(void);
 t_matrix44f			*matrix44f_dup(t_matrix44f *a);
+t_matrix44f			*matrix44f_cpy(t_matrix44f *dest, t_matrix44f *src);
 void				axb_matrix44f(t_matrix44f *to_change, t_matrix44f *mult);
 void				print_matrix(t_matrix44f *a);
 void				matrix44f_translation(t_matrix44f *a, float x, float y, float z);

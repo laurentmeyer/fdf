@@ -6,42 +6,36 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 17:04:00 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/25 21:53:15 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/27 16:51:29 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vectors.h"
 #include "libft.h"
+#include "fdf.h"
 #include <stdlib.h>
+
+#include <stdio.h>
 
 t_vec4f				*vec4f_new(float x, float y, float z, float w)
 {
-	t_vec4f		*v;
+	float		v[4];
 
-	if ((v = (t_vec4f *)malloc(sizeof(t_vec4f))))
-	{
-		*v[0] = x;
-		*v[1] = y;
-		*v[2] = z;
-		*v[3] = w;
-	}
-	return (v);
+	v[0] = x;
+	v[1] = y;
+	v[2] = z;
+	v[3] = w;
+	return (vec4f_dup((t_vec4f *)(&v)));
 }
 
-//          A TESTER, ABSOLUMENT PAS SUR
-//t_vec4f				*vec4f_dup(t_vec4f *v)
-//{
-//	t_vec4f		*tmp;
-//
-//	if ((tmp = (t_vec4f *)malloc(sizeof(t_vec4f))))
-//	{
-//		(*tmp)[0] = (*(v))[0];
-//		(*tmp)[1] = (*(v))[1];
-//		(*tmp)[2] = (*(v))[2];
-//		(*tmp)[3] = (*(v))[3];
-//	}
-//	return (tmp);
-//}
+t_vec4f				*vec4f_dup(t_vec4f *v)
+{
+	t_vec4f		*tmp;
+
+	if ((tmp = (t_vec4f *)malloc(sizeof(t_vec4f))))
+		ft_memcpy(tmp, v, sizeof(t_vec4f));
+	return (tmp);
+}
 
 void				m44f_x_vec4f(t_matrix44f *m, t_vec4f *v)
 {

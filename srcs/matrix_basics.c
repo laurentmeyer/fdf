@@ -6,25 +6,13 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 12:59:52 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/25 18:34:43 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/28 12:50:22 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrices.h"
 #include "libft.h"
 #include <stdlib.h>
-
-#include <stdio.h>
-
-void				print_matrix(t_matrix44f *a)
-{
-	int		i;
-
-	i = -1;
-	printf("\n=================================================\n");
-	while (++i < 4)
-		printf("%f %f %f %f\n", (*a)[i][0], (*a)[i][1], (*a)[i][2], (*a)[i][3]);
-}
 
 t_matrix44f			*matrix44f_identity(void)
 {
@@ -68,4 +56,9 @@ void			axb_matrix44f(t_matrix44f *to_change, t_matrix44f *mult)
 		}
 		++i;
 	}
+}
+
+t_matrix44f			*matrix44f_cpy(t_matrix44f *dest, t_matrix44f *src)
+{
+	return ((t_matrix44f *)ft_memcpy(dest, src, sizeof(t_matrix44f)));
 }
