@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 19:02:30 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/28 12:50:35 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/29 11:56:15 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,16 @@
 #define RIGHT_KEY 0x7C
 #define DOWN_KEY 0x7D
 #define UP_KEY 0x7E
+#define OPEN_KEY 0x21
+#define CLOSE_KEY 0x1E
+
+//#include <stdio.h>
 
 int		key_hooks(int keycode, void *data)
 {
 	t_data	*d;
 
+//	printf("%x\n", keycode);
 	d = (t_data *)data;
 	if (keycode == UP_KEY || keycode == DOWN_KEY)
 	{
@@ -33,6 +38,11 @@ int		key_hooks(int keycode, void *data)
 	if (keycode == RIGHT_KEY || keycode == LEFT_KEY)
 	{
 		d->cam->xz_angle += JUMP * M_PI / 180 * (keycode == RIGHT_KEY ? 1 : -1);
+		update_camera(d);
+	}
+	if (keycode == OPEN_KEY || keycode == CLOSE_KEY)
+	{
+		d->cam->distance += JUMP * (keycode == CLOSE_KEY ? 1 : -1);
 		update_camera(d);
 	}
 	if (keycode == ESC_KEY)

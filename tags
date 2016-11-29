@@ -18,6 +18,7 @@ CCSOURCES	./libft/Makefile	/^CCSOURCES = .\/srcs\/$/;"	m
 CCSOURCES	Makefile	/^CCSOURCES = .\/srcs\/$/;"	m
 CFLAGS	./libft/Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
 CFLAGS	Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
+CLOSE_KEY	srcs/hooks.c	/^#define CLOSE_KEY /;"	d	file:
 DARK_GRAY	./includes/fdf.h	/^# define DARK_GRAY /;"	d
 DARK_GRAY	includes/fdf.h	/^# define DARK_GRAY /;"	d
 DOWN_KEY	./srcs/hooks.c	/^#define DOWN_KEY /;"	d	file:
@@ -41,6 +42,8 @@ GNEFilterUPP	./includes/keys.h	/^typedef GetNextEventFilterUPP           GNEFilt
 GREEN	includes/fdf.h	/^# define GREEN /;"	d
 GetNextEventFilterUPP	./includes/keys.h	/^typedef STACK_UPP_TYPE(GetNextEventFilterProcPtr)               GetNextEventFilterUPP;$/;"	t
 HEADERS	./libft/Makefile	/^HEADERS = 	libft.h$/;"	m
+INIT_XY	includes/fdf.h	/^# define INIT_XY /;"	d
+INIT_XZ	includes/fdf.h	/^# define INIT_XZ /;"	d
 JUMP	./srcs/hooks.c	/^#define JUMP /;"	d	file:
 JUMP	srcs/hooks.c	/^#define JUMP /;"	d	file:
 KeyMap	./includes/keys.h	/^typedef BigEndianUInt32                 KeyMap[4];$/;"	t
@@ -61,6 +64,7 @@ NAME	./libft/Makefile	/^NAME = libft.a$/;"	m
 NAME	Makefile	/^NAME = fdf$/;"	m
 OBJECTS	./libft/Makefile	/^OBJECTS =	ft_memset.o			\\$/;"	m
 OBJECTS	Makefile	/^OBJECTS =	main.o					\\$/;"	m
+OPEN_KEY	srcs/hooks.c	/^#define OPEN_KEY /;"	d	file:
 RED	includes/fdf.h	/^# define RED /;"	d
 RIGHT_KEY	./srcs/hooks.c	/^#define RIGHT_KEY /;"	d	file:
 RIGHT_KEY	srcs/hooks.c	/^#define RIGHT_KEY /;"	d	file:
@@ -107,6 +111,7 @@ cam	./includes/fdf.h	/^	t_cam			*cam;$/;"	m	struct:s_data
 cam	includes/fdf.h	/^	t_cam			*cam;$/;"	m	struct:s_data
 cam_pts	./includes/fdf.h	/^	t_vec4f			***cam_pts;$/;"	m	struct:s_data
 cam_pts	includes/fdf.h	/^	t_vec4f			***cam_pts;$/;"	m	struct:s_data
+center_pts_array	srcs/init.c	/^int					center_pts_array(t_data *data)$/;"	f
 charCodeMask	./includes/keys.h	/^  charCodeMask                  = 0x000000FF,$/;"	e	enum:__anon3
 cmdKey	./includes/keys.h	/^  cmdKey                        = 1 << cmdKeyBit,$/;"	e	enum:__anon8
 cmdKeyBit	./includes/keys.h	/^  cmdKeyBit                     = 8,    \/* command key down?*\/$/;"	e	enum:__anon7
@@ -471,7 +476,9 @@ t_vec4f	./includes/vectors.h	/^typedef float		t_vec4f[4];$/;"	t
 t_vec4f	includes/vectors.h	/^typedef float		t_vec4f[4];$/;"	t
 theta	./includes/fdf.h	/^	float			theta;$/;"	m	struct:s_cam
 theta	includes/fdf.h	/^	float			theta;$/;"	m	struct:s_cam
+trace_big_slope	srcs/lines.c	/^void	trace_big_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
 trace_line	srcs/lines.c	/^void	trace_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
+trace_small_slope	srcs/lines.c	/^void	trace_small_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
 trace_v_line	srcs/lines.c	/^void	trace_v_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
 updateEvt	./includes/keys.h	/^  updateEvt                     = 6,$/;"	e	enum:__anon1
 updateMask	./includes/keys.h	/^  updateMask                    = 1 << updateEvt, \/* window needs updating*\/$/;"	e	enum:__anon2

@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/27 16:58:25 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/28 12:50:32 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/29 10:59:42 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	print_point(t_vec4f *pt)
 {
-	printf("x = %f y = %f z = %f\n", (*pt)[0], (*pt)[1], (*pt)[2]);
+	printf("x = %f y = %f z = %f w = %f\n", (*pt)[0], (*pt)[1], (*pt)[2], (*pt)[3]);
 }
 
 void	print_points_array(t_data *data, t_vec4f ***a)

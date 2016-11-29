@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:06:36 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/28 19:25:42 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/29 11:46:06 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include "matrices.h"
 # define WIN_W 640
 # define WIN_H 480
+# define INIT_XY 0
+# define INIT_XZ 0
 # define WIN_T "Test window"
 # define WHITE 0x00FFFFFF
 # define RED 0x00FF0000
