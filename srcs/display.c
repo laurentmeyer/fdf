@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 21:41:41 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/28 17:29:54 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/30 18:32:59 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	put_all_points(t_data *data)
 	while (i < data->lines)
 	{
 		j = 0;
-		while (j < data->cols)
+		while ((data->screen_pts)[i][j])
 		{
 			pt = (data->screen_pts)[i][j];
 			pixel_put(data, (int)((*pt)[0]), (int)((*pt)[1]), WHITE);

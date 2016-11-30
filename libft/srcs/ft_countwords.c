@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_countwords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 16:10:17 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/30 15:22:20 by lmeyer           ###   ########.fr       */
+/*   Created: 2016/11/30 14:46:07 by lmeyer            #+#    #+#             */
+/*   Updated: 2016/11/30 14:56:35 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
-#include <stdlib.h>
-
-#include <stdio.h>
-
-int		main(int ac, char **av)
+int	ft_countwords(char const *s, char c)
 {
-	t_data		*data;
-
-	if (ac == 2
-			&& (data = init_data(av[1])))
-		display_image(data);
-	return (0);
+	if (c == '\0')
+		return ((*s == '\0') ? 0 : 1);
+	while (*s == c)
+		s++;
+	if (*s == '\0')
+		return (0);
+	while (*s != c && *s != '\0')
+		s++;
+	return (1 + ft_countwords(s, c));
 }

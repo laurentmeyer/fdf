@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/27 16:58:25 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/29 10:59:42 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/30 18:31:48 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	print_points_array(t_data *data, t_vec4f ***a)
 	i = 0;
 	while (i < data->lines)
 	{
-		j = -1;
-		while (++j < data->cols)
-			print_point(a[i][j]);
+		j = 0;
+		while ((data->world_pts)[i][j])
+			print_point(a[i][j++]);
 		++i;
 	}
 }

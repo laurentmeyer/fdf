@@ -56,7 +56,8 @@ OBJECTS =	ft_memset.o			\
 			ft_lstadd.o			\
 			ft_lstiter.o		\
 			ft_lstmap.o			\
-			get_next_line.o
+			get_next_line.o		\
+			ft_countwords.o
 
 NAME = libft.a
 

@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:06:36 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/29 11:46:06 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/11/30 18:39:16 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ typedef struct		s_data
 	t_cam			*cam;
 }					t_data;
 
-t_data				*init_data(void);
+int					file_dimensions(char *path, t_data *data);
+int					fill_world_pts(char *path, t_data *data);
+t_data				*init_data(char *path);
 t_vec4f				*init_vec4f(float x, float y, float z, float w);
 int					display_image(t_data *data);
 int					key_hooks(int keycode, void *data);
@@ -75,6 +77,7 @@ void				put_grid(t_data *data, int step);
 void				update_proj_perspect_matrix(t_data *data);
 void				update_proj_orth_matrix(t_data *data);
 void				trace_line(t_data *data, t_vec4f *a, t_vec4f *b, int color);
+void				trace_all_lines(t_data *data);
 
 void	print_point(t_vec4f *pt);
 void	print_points_array(t_data *data, t_vec4f ***a);

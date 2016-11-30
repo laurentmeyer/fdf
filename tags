@@ -56,6 +56,7 @@ LIBFT	Makefile	/^LIBFT = 		.\/libft\/$/;"	m
 LIBFT_H	./libft/includes/libft.h	/^# define LIBFT_H$/;"	d
 MATRICES_H	./includes/matrices.h	/^# define MATRICES_H$/;"	d
 MATRICES_H	includes/matrices.h	/^# define MATRICES_H$/;"	d
+MAX_STR	srcs/read.c	/^#define MAX_STR /;"	d	file:
 MINILIB	Makefile	/^MINILIB = 		.\/mlx\/$/;"	m
 MININT	./libft/includes/libft.h	/^# define MININT /;"	d
 MININTSIZE	./libft/includes/libft.h	/^# define MININTSIZE /;"	d
@@ -141,6 +142,9 @@ evtQWhat	./includes/keys.h	/^  EventKind           evtQWhat;               \/* t
 evtQWhen	./includes/keys.h	/^  UInt32              evtQWhen;$/;"	m	struct:EvQEl
 evtQWhere	./includes/keys.h	/^  Point               evtQWhere;$/;"	m	struct:EvQEl
 fd	./libft/includes/get_next_line.h	/^	int				fd;$/;"	m	struct:s_buf
+file_dimensions	srcs/read.c	/^int		file_dimensions(char *path, t_data *data)$/;"	f
+fill_one_line	srcs/read.c	/^static int		fill_one_line(t_data *data, char *line, int i)$/;"	f	file:
+fill_world_pts	srcs/read.c	/^int		fill_world_pts(char *path, t_data *data)$/;"	f
 find_end	./libft/srcs/get_next_line.c	/^int				find_end(t_buf *b, char **line)$/;"	f
 ft_append	./libft/srcs/get_next_line.c	/^int				ft_append(char **adest, t_buf *b, int n, int reinit)$/;"	f
 ft_atoi	./libft/srcs/ft_atoi.c	/^int		ft_atoi(const char *str)$/;"	f
@@ -206,6 +210,7 @@ ft_strsub	./libft/srcs/ft_strsub.c	/^char	*ft_strsub(char const *s, unsigned int
 ft_strtrim	./libft/srcs/ft_strtrim.c	/^char	*ft_strtrim(char const *s)$/;"	f
 ft_tolower	./libft/srcs/ft_tolower.c	/^int		ft_tolower(int c)$/;"	f
 ft_toupper	./libft/srcs/ft_toupper.c	/^int		ft_toupper(int c)$/;"	f
+get_next_element	srcs/read.c	/^static char	*get_next_element(char *s, char buffer[MAX_STR])$/;"	f	file:
 get_next_line	./libft/srcs/get_next_line.c	/^int				get_next_line(const int fd, char **line)$/;"	f
 highLevelEventMask	./includes/keys.h	/^  highLevelEventMask            = 0x0400, \/* high-level events (includes AppleEvents)*\/$/;"	e	enum:__anon2
 img_addr	./includes/fdf.h	/^	char			*img_addr;$/;"	m	struct:s_data
@@ -215,9 +220,10 @@ img_ptr	includes/fdf.h	/^	void			*img_ptr;$/;"	m	struct:s_data
 init_cam	./srcs/init.c	/^t_cam			*init_cam(t_data *data)$/;"	f
 init_cam	srcs/init.c	/^t_cam			*init_cam(t_data *data)$/;"	f
 init_data	./srcs/init.c	/^t_data				*init_data(void)$/;"	f
-init_data	srcs/init.c	/^t_data				*init_data(void)$/;"	f
+init_data	srcs/init.c	/^t_data				*init_data(char *path)$/;"	f
+init_other_pts_array	srcs/init.c	/^t_vec4f			***init_other_pts_array(t_data *data)$/;"	f
 init_pts_array	./srcs/init.c	/^t_vec4f			***init_pts_array(t_data *data)$/;"	f
-init_pts_array	srcs/init.c	/^t_vec4f			***init_pts_array(t_data *data)$/;"	f
+init_world_pts_array	srcs/init.c	/^t_vec4f			***init_world_pts_array(t_data *data)$/;"	f
 iter	./libft/includes/get_next_line.h	/^	int				iter;$/;"	m	struct:s_buf
 kAppleLogoCharCode	./includes/keys.h	/^  kAppleLogoCharCode            = 20,   \/* glyph available only in system fonts*\/$/;"	e	enum:__anon9
 kAppleLogoUnicode	./includes/keys.h	/^  kAppleLogoUnicode             = 0xF8FF \/* Unicode APPLE LOGO*\/$/;"	e	enum:__anon10
@@ -391,7 +397,7 @@ m44f_x_vec4f_to	./srcs/vectors.c	/^void				m44f_x_vec4f_to(t_vec4f *dest, t_matr
 mDownMask	./includes/keys.h	/^  mDownMask                     = 1 << mouseDown, \/* mouse button pressed*\/$/;"	e	enum:__anon2
 mUpMask	./includes/keys.h	/^  mUpMask                       = 1 << mouseUp, \/* mouse button released*\/$/;"	e	enum:__anon2
 main	./srcs/main.c	/^int		main(void)$/;"	f
-main	srcs/main.c	/^int		main(void)$/;"	f
+main	srcs/main.c	/^int		main(int ac, char **av)$/;"	f
 matrix44f_cpy	srcs/matrix_basics.c	/^t_matrix44f			*matrix44f_cpy(t_matrix44f *dest, t_matrix44f *src)$/;"	f
 matrix44f_dup	./srcs/matrix_basics.c	/^t_matrix44f			*matrix44f_dup(t_matrix44f *a)$/;"	f
 matrix44f_dup	srcs/matrix_basics.c	/^t_matrix44f			*matrix44f_dup(t_matrix44f *a)$/;"	f
@@ -476,6 +482,7 @@ t_vec4f	./includes/vectors.h	/^typedef float		t_vec4f[4];$/;"	t
 t_vec4f	includes/vectors.h	/^typedef float		t_vec4f[4];$/;"	t
 theta	./includes/fdf.h	/^	float			theta;$/;"	m	struct:s_cam
 theta	includes/fdf.h	/^	float			theta;$/;"	m	struct:s_cam
+trace_all_lines	srcs/update.c	/^void				trace_all_lines(t_data *data)$/;"	f
 trace_big_slope	srcs/lines.c	/^void	trace_big_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
 trace_line	srcs/lines.c	/^void	trace_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
 trace_small_slope	srcs/lines.c	/^void	trace_small_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f

@@ -8,7 +8,8 @@ OBJECTS =	main.o					\
 			print.o					\
 			update.o				\
 			projections.o			\
-			lines.o
+			lines.o					\
+			read.o
 
 NAME = fdf
 
