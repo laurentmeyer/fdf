@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 13:48:59 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/30 18:27:41 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/01 13:42:53 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #define MAX_STR 20
+
+#include <stdio.h>
 
 static char	*get_next_element(char *s, char buffer[MAX_STR])
 {
@@ -62,8 +64,9 @@ static int		fill_one_line(t_data *data, char *line, int i)
 	char	buffer[MAX_STR];
 
 	j = 0;
-	while (*(line = get_next_element(line, buffer)))
+	while (*line)
 	{
+		line = get_next_element(line, buffer);
 		if (!((data->world_pts)[i][j] = vec4f_new((float)i,
 				(float)ft_atoi(buffer), (float)j, 1.0)))
 			return (0);
@@ -88,5 +91,14 @@ int		fill_world_pts(char *path, t_data *data)
 			return (0);
 		free(line);
 	}
+	if (!((data->world_pts)[data->lines][0] = vec4f_new(0.0, 0.0, 0.0, 1.0))
+			|| !((data->world_pts)[data->lines][1]
+				= vec4f_new(1.0, 0.0, 0.0, 1.0))
+			|| !((data->world_pts)[data->lines][2]
+				= vec4f_new(0.0, 1.0, 0.0, 1.0))
+			|| !((data->world_pts)[data->lines][3]
+				= vec4f_new(0.0, 0.0, 1.0, 1.0)))
+		return (0);
+	printf("repere OK\n");
 	return ((close(fd) == -1) ? 0 : 1);
 }

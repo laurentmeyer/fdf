@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:06:36 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/30 18:39:16 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/01 12:03:14 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include "libft.h"
 # include "vectors.h"
 # include "matrices.h"
-# define WIN_W 640
-# define WIN_H 480
+# define WIN_W 1024
+# define WIN_H 768
 # define INIT_XY 0
 # define INIT_XZ 0
 # define WIN_T "Test window"
@@ -36,7 +36,6 @@ typedef struct		s_cam
 	float			xz_angle;
 	float			distance;
 	t_matrix44f		*wtoc;
-//	t_matrix44f		*ctow;
 	float			znear;
 	float			zfar;
 	float			theta;
@@ -55,11 +54,11 @@ typedef struct		s_data
 	int				endian;
 	int				cols;
 	int				lines;
+	t_cam			*cam;
 	t_vec4f			***world_pts;
 	t_vec4f			***cam_pts;
-	float			*zbuffer;
 	t_vec4f			***screen_pts;
-	t_cam			*cam;
+	float			*zbuffer;
 }					t_data;
 
 int					file_dimensions(char *path, t_data *data);

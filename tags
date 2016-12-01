@@ -13,11 +13,14 @@ CALLBACK_API	./includes/keys.h	/^typedef CALLBACK_API( void , GetNextEventFilter
 CCFRAMEWORKS	Makefile	/^CCFRAMEWORKS = -framework AppKit -framework OpenGL$/;"	m
 CCHEADERS	./libft/Makefile	/^CCHEADERS = -I .\/includes\/$/;"	m
 CCHEADERS	Makefile	/^CCHEADERS = -I.\/includes\/			\\$/;"	m
+CCHEADERS	libft/Makefile	/^CCHEADERS = -I .\/includes\/$/;"	m
 CCLIBS	Makefile	/^CCLIBS = -L$(LIBFT) -lft			\\$/;"	m
 CCSOURCES	./libft/Makefile	/^CCSOURCES = .\/srcs\/$/;"	m
 CCSOURCES	Makefile	/^CCSOURCES = .\/srcs\/$/;"	m
+CCSOURCES	libft/Makefile	/^CCSOURCES = .\/srcs\/$/;"	m
 CFLAGS	./libft/Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
 CFLAGS	Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
+CFLAGS	libft/Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
 CLOSE_KEY	srcs/hooks.c	/^#define CLOSE_KEY /;"	d	file:
 DARK_GRAY	./includes/fdf.h	/^# define DARK_GRAY /;"	d
 DARK_GRAY	includes/fdf.h	/^# define DARK_GRAY /;"	d
@@ -42,6 +45,7 @@ GNEFilterUPP	./includes/keys.h	/^typedef GetNextEventFilterUPP           GNEFilt
 GREEN	includes/fdf.h	/^# define GREEN /;"	d
 GetNextEventFilterUPP	./includes/keys.h	/^typedef STACK_UPP_TYPE(GetNextEventFilterProcPtr)               GetNextEventFilterUPP;$/;"	t
 HEADERS	./libft/Makefile	/^HEADERS = 	libft.h$/;"	m
+HEADERS	libft/Makefile	/^HEADERS = 	libft.h$/;"	m
 INIT_XY	includes/fdf.h	/^# define INIT_XY /;"	d
 INIT_XZ	includes/fdf.h	/^# define INIT_XZ /;"	d
 JUMP	./srcs/hooks.c	/^#define JUMP /;"	d	file:
@@ -54,23 +58,30 @@ LEFT_KEY	./srcs/hooks.c	/^#define LEFT_KEY /;"	d	file:
 LEFT_KEY	srcs/hooks.c	/^#define LEFT_KEY /;"	d	file:
 LIBFT	Makefile	/^LIBFT = 		.\/libft\/$/;"	m
 LIBFT_H	./libft/includes/libft.h	/^# define LIBFT_H$/;"	d
+LIBFT_H	libft/includes/libft.h	/^# define LIBFT_H$/;"	d
 MATRICES_H	./includes/matrices.h	/^# define MATRICES_H$/;"	d
 MATRICES_H	includes/matrices.h	/^# define MATRICES_H$/;"	d
 MAX_STR	srcs/read.c	/^#define MAX_STR /;"	d	file:
 MINILIB	Makefile	/^MINILIB = 		.\/mlx\/$/;"	m
 MININT	./libft/includes/libft.h	/^# define MININT /;"	d
+MININT	libft/includes/libft.h	/^# define MININT /;"	d
 MININTSIZE	./libft/includes/libft.h	/^# define MININTSIZE /;"	d
+MININTSIZE	libft/includes/libft.h	/^# define MININTSIZE /;"	d
 MININTSTR	./libft/includes/libft.h	/^# define MININTSTR /;"	d
+MININTSTR	libft/includes/libft.h	/^# define MININTSTR /;"	d
 NAME	./libft/Makefile	/^NAME = libft.a$/;"	m
 NAME	Makefile	/^NAME = fdf$/;"	m
+NAME	libft/Makefile	/^NAME = libft.a$/;"	m
 OBJECTS	./libft/Makefile	/^OBJECTS =	ft_memset.o			\\$/;"	m
 OBJECTS	Makefile	/^OBJECTS =	main.o					\\$/;"	m
+OBJECTS	libft/Makefile	/^OBJECTS =	ft_memset.o			\\$/;"	m
 OPEN_KEY	srcs/hooks.c	/^#define OPEN_KEY /;"	d	file:
 RED	includes/fdf.h	/^# define RED /;"	d
 RIGHT_KEY	./srcs/hooks.c	/^#define RIGHT_KEY /;"	d	file:
 RIGHT_KEY	srcs/hooks.c	/^#define RIGHT_KEY /;"	d	file:
 SOURCES	./libft/Makefile	/^SOURCES = $(OBJECTS:%.o=$(CCSOURCES)%.c)$/;"	m
 SOURCES	Makefile	/^SOURCES = $(OBJECTS:%.o=$(CCSOURCES)%.c)$/;"	m
+SOURCES	libft/Makefile	/^SOURCES = $(OBJECTS:%.o=$(CCSOURCES)%.c)$/;"	m
 UP_KEY	./srcs/hooks.c	/^#define UP_KEY /;"	d	file:
 UP_KEY	srcs/hooks.c	/^#define UP_KEY /;"	d	file:
 VECTORS_H	./includes/vectors.h	/^# define VECTORS_H$/;"	d
@@ -119,7 +130,9 @@ cmdKeyBit	./includes/keys.h	/^  cmdKeyBit                     = 8,    \/* comman
 cols	./includes/fdf.h	/^	int				cols;$/;"	m	struct:s_data
 cols	includes/fdf.h	/^	int				cols;$/;"	m	struct:s_data
 content	./libft/includes/libft.h	/^	void				*content;$/;"	m	struct:s_list
+content	libft/includes/libft.h	/^	void				*content;$/;"	m	struct:s_list
 content_size	./libft/includes/libft.h	/^	size_t				content_size;$/;"	m	struct:s_list
+content_size	libft/includes/libft.h	/^	size_t				content_size;$/;"	m	struct:s_list
 controlKey	./includes/keys.h	/^  controlKey                    = 1 << controlKeyBit,$/;"	e	enum:__anon8
 controlKeyBit	./includes/keys.h	/^  controlKeyBit                 = 12,   \/* control key down?*\/$/;"	e	enum:__anon7
 convertClipboardFlag	./includes/keys.h	/^  convertClipboardFlag          = 2     \/* Bit 1 in resume message indicates clipboard change*\/$/;"	e	enum:__anon6
@@ -147,6 +160,7 @@ fill_one_line	srcs/read.c	/^static int		fill_one_line(t_data *data, char *line, 
 fill_world_pts	srcs/read.c	/^int		fill_world_pts(char *path, t_data *data)$/;"	f
 find_end	./libft/srcs/get_next_line.c	/^int				find_end(t_buf *b, char **line)$/;"	f
 ft_append	./libft/srcs/get_next_line.c	/^int				ft_append(char **adest, t_buf *b, int n, int reinit)$/;"	f
+ft_arrlen	libft/srcs/ft_arrlen.c	/^int		ft_arrlen(void *array, size_t size)$/;"	f
 ft_atoi	./libft/srcs/ft_atoi.c	/^int		ft_atoi(const char *str)$/;"	f
 ft_bzero	./libft/srcs/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f
 ft_intlen	./libft/srcs/ft_itoa.c	/^static	int	ft_intlen(int n)$/;"	f	file:
@@ -393,7 +407,9 @@ key_hooks	srcs/hooks.c	/^int		key_hooks(int keycode, void *data)$/;"	f
 lines	./includes/fdf.h	/^	int				lines;$/;"	m	struct:s_data
 lines	includes/fdf.h	/^	int				lines;$/;"	m	struct:s_data
 m44f_x_vec4f	./srcs/vectors.c	/^void				m44f_x_vec4f(t_matrix44f *m, t_vec4f *v)$/;"	f
+m44f_x_vec4f	srcs/vectors.c	/^void				m44f_x_vec4f(t_matrix44f *m, t_vec4f *v)$/;"	f
 m44f_x_vec4f_to	./srcs/vectors.c	/^void				m44f_x_vec4f_to(t_vec4f *dest, t_matrix44f *m, t_vec4f *v)$/;"	f
+m44f_x_vec4f_to	srcs/vectors.c	/^void				m44f_x_vec4f_to(t_vec4f *dest, t_matrix44f *m, t_vec4f *v)$/;"	f
 mDownMask	./includes/keys.h	/^  mDownMask                     = 1 << mouseDown, \/* mouse button pressed*\/$/;"	e	enum:__anon2
 mUpMask	./includes/keys.h	/^  mUpMask                       = 1 << mouseUp, \/* mouse button released*\/$/;"	e	enum:__anon2
 main	./srcs/main.c	/^int		main(void)$/;"	f
@@ -422,6 +438,7 @@ networkEvt	./includes/keys.h	/^  networkEvt                    = 10,$/;"	e	enum:
 networkMask	./includes/keys.h	/^  networkMask                   = 0x0400,$/;"	e	enum:__anon15
 next	./libft/includes/get_next_line.h	/^	struct s_buf	*next;$/;"	m	struct:s_buf	typeref:struct:s_buf::s_buf
 next	./libft/includes/libft.h	/^	struct s_list		*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
+next	libft/includes/libft.h	/^	struct s_list		*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
 nullEvent	./includes/keys.h	/^  nullEvent                     = 0,$/;"	e	enum:__anon1
 optionKey	./includes/keys.h	/^  optionKey                     = 1 << optionKeyBit,$/;"	e	enum:__anon8
 optionKeyBit	./includes/keys.h	/^  optionKeyBit                  = 11,   \/* option key down?*\/$/;"	e	enum:__anon7
@@ -463,6 +480,7 @@ s_cam	includes/fdf.h	/^typedef struct		s_cam$/;"	s
 s_data	./includes/fdf.h	/^typedef struct		s_data$/;"	s
 s_data	includes/fdf.h	/^typedef struct		s_data$/;"	s
 s_list	./libft/includes/libft.h	/^typedef	struct			s_list$/;"	s
+s_list	libft/includes/libft.h	/^typedef	struct			s_list$/;"	s
 screen_pts	./includes/fdf.h	/^	t_vec4f			***screen_pts;$/;"	m	struct:s_data
 screen_pts	includes/fdf.h	/^	t_vec4f			***screen_pts;$/;"	m	struct:s_data
 shiftKey	./includes/keys.h	/^  shiftKey                      = 1 << shiftKeyBit,$/;"	e	enum:__anon8
@@ -476,6 +494,7 @@ t_cam	includes/fdf.h	/^}					t_cam;$/;"	t	typeref:struct:s_cam
 t_data	./includes/fdf.h	/^}					t_data;$/;"	t	typeref:struct:s_data
 t_data	includes/fdf.h	/^}					t_data;$/;"	t	typeref:struct:s_data
 t_list	./libft/includes/libft.h	/^}						t_list;$/;"	t	typeref:struct:s_list
+t_list	libft/includes/libft.h	/^}						t_list;$/;"	t	typeref:struct:s_list
 t_matrix44f	./includes/matrices.h	/^typedef	float		t_matrix44f[4][4];$/;"	t
 t_matrix44f	includes/matrices.h	/^typedef	float		t_matrix44f[4][4];$/;"	t
 t_vec4f	./includes/vectors.h	/^typedef float		t_vec4f[4];$/;"	t
@@ -500,7 +519,9 @@ update_proj_perspect_matrix	srcs/projections.c	/^void				update_proj_perspect_ma
 update_screen_points	./srcs/update.c	/^void	update_screen_points(t_data *data)$/;"	f
 update_screen_points	srcs/update.c	/^void	update_screen_points(t_data *data)$/;"	f
 vec4f_dup	./srcs/vectors.c	/^t_vec4f				*vec4f_dup(t_vec4f *v)$/;"	f
+vec4f_dup	srcs/vectors.c	/^t_vec4f				*vec4f_dup(t_vec4f *v)$/;"	f
 vec4f_new	./srcs/vectors.c	/^t_vec4f				*vec4f_new(float x, float y, float z, float w)$/;"	f
+vec4f_new	srcs/vectors.c	/^t_vec4f				*vec4f_new(float x, float y, float z, float w)$/;"	f
 what	./includes/keys.h	/^  EventKind           what;$/;"	m	struct:EventRecord
 when	./includes/keys.h	/^  UInt32              when;$/;"	m	struct:EventRecord
 where	./includes/keys.h	/^  Point               where;$/;"	m	struct:EventRecord

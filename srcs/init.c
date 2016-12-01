@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 16:01:23 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/30 18:29:56 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/01 13:44:52 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 
 t_cam			*init_cam(t_data *data)
 {
-	printf("init_cam\n");
 	if ((data->cam = (t_cam *)malloc(sizeof(t_cam))))
 	{
 		data->cam->xy_angle = INIT_XY * M_PI / 180;
@@ -45,7 +44,9 @@ t_vec4f			***init_world_pts_array(t_data *data)
 	int		j;
 	t_vec4f	***dest;
 
-	if (!(dest = (t_vec4f ***)malloc(data->lines * sizeof(t_vec4f **))))
+	if (!(dest = (t_vec4f ***)malloc((data->lines + 2) * sizeof(t_vec4f **)))
+		|| !(dest[data->lines] = (t_vec4f **)malloc(5 * sizeof(t_vec4f *)))
+		|| !(dest[data->lines + 1] = (t_vec4f **)malloc(sizeof(t_vec4f *))))
 		return (NULL);
 	i = 0;
 	while (i < data->lines)
@@ -58,6 +59,10 @@ t_vec4f			***init_world_pts_array(t_data *data)
 			dest[i][j++] = NULL;
 		++i;
 	}
+	i = 0;
+	while (i < 5)
+		dest[data->lines][i++] = NULL;
+	dest[data->lines + 1][0] = NULL;
 	return (dest);
 }
 
@@ -67,30 +72,25 @@ t_vec4f			***init_other_pts_array(t_data *data)
 	int		j;
 	t_vec4f	***dest;
 
-	if (!(dest = (t_vec4f ***)malloc(data->lines * sizeof(t_vec4f **))))
+	if (!(dest = (t_vec4f ***)malloc((data->lines + 2) * sizeof(t_vec4f **)))
+			|| !(dest[data->lines + 1] = (t_vec4f **)malloc(sizeof(t_vec4f *))))
 		return (NULL);
 	i = 0;
-	while (i < data->lines)
+	while (i < data->lines + 1)
 	{
-		if (!(dest[i] = (t_vec4f **)malloc((data->cols + 1)
-						* sizeof(t_vec4f *))))
-			return (NULL);
 		j = 0;
-		while (j < data->cols + 1)
-		{
-//			if ((data->world_pts)[i][j] == NULL)
-//				printf("world[%d][%d] is NULL\n", i, j);
-//			else
-//				print_point((data->world_pts)[i][j]);
-			if ((data->world_pts)[i][j] == NULL)
-				dest[i][j] = NULL;
-			else if (!(dest[i][j] = vec4f_new(0.0, 0.0, 0.0, 1.0)))
-				return (NULL);
-//			printf("datacam[%d][%d] = %p\n", i, j, dest[i][j]);
+		while ((data->world_pts)[i][j])
 			++j;
+		if (!(dest[i] = (t_vec4f **)malloc((j + 1) * sizeof(t_vec4f *))))
+			return (NULL);
+		while (j >= 0)
+		{
+			dest[i][j] = vec4f_dup((data->world_pts)[i][j]);
+			--j;
 		}
 		++i;
 	}
+	dest[data->lines + 1][0] = NULL;
 	return (dest);
 }
 
@@ -114,7 +114,6 @@ int					center_pts_array(t_data *data)
 	return (1);
 }
 
-
 t_data				*init_data(char *path)
 {
 	t_data	*data;
@@ -123,6 +122,7 @@ t_data				*init_data(char *path)
 	{
 		if (!(data->ptr = mlx_init())
 				|| !(data->win = mlx_new_window(data->ptr, WIN_W, WIN_H, WIN_T))
+//				|| mlx_do_key_autorepeaton(data->ptr)
 				|| !(data->img_ptr = mlx_new_image(data->ptr, WIN_W, WIN_H))
 				|| !(data->img_addr = mlx_get_data_addr(data->img_ptr,
 						&(data->bits_per_pixel),
@@ -141,7 +141,3 @@ t_data				*init_data(char *path)
 	}
 	return (data);
 }
-//				|| !((data->world_pts)[0][0] = vec4f_new(0.0, 0.0, 0.0, 1.0))
-//				|| !((data->world_pts)[0][1] = vec4f_new(1.0, 0.0, 0.0, 1.0))
-//				|| !((data->world_pts)[1][0] = vec4f_new(0.0, 1.0, 0.0, 1.0))
-//				|| !((data->world_pts)[1][1] = vec4f_new(0.0, 0.0, 1.0, 1.0))
