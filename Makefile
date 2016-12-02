@@ -9,7 +9,9 @@ OBJECTS =	main.o					\
 			update.o				\
 			projections.o			\
 			lines.o					\
-			read.o
+			read.o					\
+			gradients.o				\
+			colors.o
 
 NAME = fdf
 

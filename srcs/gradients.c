@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lines.c                                            :+:      :+:    :+:   */
+/*   gradients.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/28 17:39:28 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/12/02 15:58:30 by lmeyer           ###   ########.fr       */
+/*   Created: 2016/12/02 12:48:54 by lmeyer            #+#    #+#             */
+/*   Updated: 2016/12/02 21:01:51 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,48 @@
 #include "fdf.h"
 #include <math.h>
 
-#include <stdio.h>
-
-void	trace_v_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)
+void	trace_v_gradient(t_data *data, t_vec4f *a, t_vec4f *b, int pixels)
 {
-	int x;
-	int	y;
+	int		x;
+	int		y;
+	int		i;
 
+	pixels = distance_pixels(a, b);
 	if ((int)((*a)[1]) > (int)((*b)[1]))
-		trace_v_line(data, b, a, color);
+		trace_v_gradient(data, b, a, 0);
 	else
 	{
 		x = (int)((*a)[0]);
 		y = (int)((*a)[1]);
+		i = 0;
 		while (y < (int)((*b)[1]))
-			pixel_put(data, x, y++, color);
+		{
+			pixel_put(data, x, y,
+					color_between_ratio(a, b, (float)i++ / (float)pixels));
+			++y;
+		}
 	}
 }
 
 
-void	trace_small_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)
+void	trace_small_gradient(t_data *data, t_vec4f *a, t_vec4f *b, int pixels)
 {
 	float	slope;
 	float	error;
 	int		x;
 	int		y;
+	int		i;
 
+	pixels = distance_pixels(a, b);
 	slope = ((*b)[1] - (*a)[1]) / ((*b)[0] - (*a)[0]);
 	error = -1.0;
 	x = (int)((*a)[0]);
 	y = (int)((*a)[1]);
+	i = 0;
 	while (x < (int)((*b)[0]))
 	{
-		pixel_put(data, x, y, color);
+		pixel_put(data, x, y,
+				color_between_ratio(a, b, (float)i++ / (float)pixels));
 		error += fabs(slope);
 		if (error >= 0.0)
 		{
@@ -57,20 +66,24 @@ void	trace_small_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)
 	}
 }
 
-void	trace_big_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)
+void	trace_big_gradient(t_data *data, t_vec4f *a, t_vec4f *b, int pixels)
 {
 	float	slope;
 	float	error;
 	int		x;
 	int		y;
+	int		i;
 
+	pixels = distance_pixels(a, b);
 	slope = ((*b)[1] - (*a)[1]) / ((*b)[0] - (*a)[0]);
 	error = -1.0;
 	x = (int)((*a)[0]);
 	y = (int)((*a)[1]);
+	i = 0;
 	while (y < (int)((*b)[1]))
 	{
-		pixel_put(data, x, y, color);
+		pixel_put(data, x, y, color_between_ratio(a, b,
+					(float)i++ / (float)pixels));
 		error += fabs(1 / slope);
 		if (error >= 0.0)
 		{
@@ -81,16 +94,16 @@ void	trace_big_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)
 	}
 }
 
-void	trace_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)
+void	trace_gradient(t_data *data, t_vec4f *a, t_vec4f *b)
 {
 	if ((int)((*a)[0]) == (int)((*b)[0]))
-		trace_v_line(data, a, b, color);
+		trace_v_gradient(data, a, b, 0);
 	else if (fabs(((*b)[1] - (*a)[1]) / ((*b)[0] - (*a)[0])) > 1)
 		(int)((*a)[1]) < (int)((*b)[1]) ? 
-			trace_big_slope(data, a, b, color)
-			: trace_big_slope(data, b, a, color);
+			trace_big_gradient(data, a, b, 0)
+			: trace_big_gradient(data, b, a, 0);
 	else
 		(int)((*a)[0]) < (int)((*b)[0]) ? 
-			trace_small_slope(data, a, b, color)
-			: trace_small_slope(data, b, a, color);
+			trace_small_gradient(data, a, b, 0)
+			: trace_small_gradient(data, b, a, 0);
 }

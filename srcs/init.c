@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_square.c                                      :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 16:01:23 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/12/01 13:44:52 by lmeyer           ###   ########.fr       */
+/*   Created: 2016/12/02 12:32:54 by lmeyer            #+#    #+#             */
+/*   Updated: 2016/12/02 12:32:55 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <math.h>
+# define INIT_XY 45
+# define INIT_XZ -45
+# define INIT_ZOOM 30
 
 #include <stdio.h>
 
@@ -26,8 +29,12 @@ t_cam			*init_cam(t_data *data)
 	{
 		data->cam->xy_angle = INIT_XY * M_PI / 180;
 		data->cam->xz_angle = INIT_XZ * M_PI / 180;
-		data->cam->distance = 2;
+		data->cam->zoom = INIT_ZOOM;
 		data->cam->znear = 1.0;
+		data->cam->proj = 'o';
+		data->cam->details = 1;
+		data->cam->marks = 0;
+		data->cam->y_scale = 1.0;
 		data->cam->zfar = 1000.0;
 		if (!(data->cam->wtoc = matrix44f_identity())
 				|| !(data->cam->perspect_proj = matrix44f_identity())
@@ -114,6 +121,34 @@ int					center_pts_array(t_data *data)
 	return (1);
 }
 
+int					find_min_max_height(t_data *data)
+{
+	float		min;
+	float		max;
+	float		tmp;
+	int			i;
+	int			j;
+
+	min = (*((data->world_pts)[0][0]))[1];
+	max = min;
+	i = 0;
+	while (i++ < data->lines)
+	{
+		j = 0;
+		while ((data->world_pts)[i -1][j])
+		{
+			if ((tmp = (*((data->world_pts)[i - 1][j]))[1]) < min)
+				min = tmp;
+			if ((tmp = (*((data->world_pts)[i - 1][j]))[1]) > max)
+				max = tmp;
+			++j;
+		}
+	}
+	data->min_y = min;
+	data->max_y = max;
+	return (1);
+}
+
 t_data				*init_data(char *path)
 {
 	t_data	*data;
@@ -122,7 +157,7 @@ t_data				*init_data(char *path)
 	{
 		if (!(data->ptr = mlx_init())
 				|| !(data->win = mlx_new_window(data->ptr, WIN_W, WIN_H, WIN_T))
-//				|| mlx_do_key_autorepeaton(data->ptr)
+				//				|| mlx_do_key_autorepeaton(data->ptr)
 				|| !(data->img_ptr = mlx_new_image(data->ptr, WIN_W, WIN_H))
 				|| !(data->img_addr = mlx_get_data_addr(data->img_ptr,
 						&(data->bits_per_pixel),
@@ -130,12 +165,11 @@ t_data				*init_data(char *path)
 				|| !file_dimensions(path, data)
 				|| !(data->world_pts = init_world_pts_array(data))
 				|| !fill_world_pts(path, data)
+				|| !find_min_max_height(data)
 				|| !(center_pts_array(data))
 				|| !(data->cam_pts = init_other_pts_array(data))
 				|| !(data->screen_pts = init_other_pts_array(data))
 				|| !(init_cam(data))
-//				|| !(data->zbuffer = (float *)malloc(WIN_H * WIN_W
-//						* sizeof(float)))
 		   )
 			return (NULL);
 	}

@@ -26,6 +26,7 @@ DARK_GRAY	./includes/fdf.h	/^# define DARK_GRAY /;"	d
 DARK_GRAY	includes/fdf.h	/^# define DARK_GRAY /;"	d
 DOWN_KEY	./srcs/hooks.c	/^#define DOWN_KEY /;"	d	file:
 DOWN_KEY	srcs/hooks.c	/^#define DOWN_KEY /;"	d	file:
+D_KEY	srcs/hooks.c	/^#define D_KEY /;"	d	file:
 ERR	./libft/srcs/get_next_line.c	/^#define ERR /;"	d	file:
 ESC_KEY	./srcs/hooks.c	/^#define ESC_KEY /;"	d	file:
 ESC_KEY	srcs/hooks.c	/^#define ESC_KEY /;"	d	file:
@@ -46,8 +47,9 @@ GREEN	includes/fdf.h	/^# define GREEN /;"	d
 GetNextEventFilterUPP	./includes/keys.h	/^typedef STACK_UPP_TYPE(GetNextEventFilterProcPtr)               GetNextEventFilterUPP;$/;"	t
 HEADERS	./libft/Makefile	/^HEADERS = 	libft.h$/;"	m
 HEADERS	libft/Makefile	/^HEADERS = 	libft.h$/;"	m
-INIT_XY	includes/fdf.h	/^# define INIT_XY /;"	d
-INIT_XZ	includes/fdf.h	/^# define INIT_XZ /;"	d
+INIT_XY	srcs/init.c	/^# define INIT_XY /;"	d	file:
+INIT_XZ	srcs/init.c	/^# define INIT_XZ /;"	d	file:
+INIT_ZOOM	srcs/init.c	/^# define INIT_ZOOM /;"	d	file:
 JUMP	./srcs/hooks.c	/^#define JUMP /;"	d	file:
 JUMP	srcs/hooks.c	/^#define JUMP /;"	d	file:
 KeyMap	./includes/keys.h	/^typedef BigEndianUInt32                 KeyMap[4];$/;"	t
@@ -61,6 +63,7 @@ LIBFT_H	./libft/includes/libft.h	/^# define LIBFT_H$/;"	d
 LIBFT_H	libft/includes/libft.h	/^# define LIBFT_H$/;"	d
 MATRICES_H	./includes/matrices.h	/^# define MATRICES_H$/;"	d
 MATRICES_H	includes/matrices.h	/^# define MATRICES_H$/;"	d
+MAX_COLOR	srcs/colors.c	/^#define MAX_COLOR /;"	d	file:
 MAX_STR	srcs/read.c	/^#define MAX_STR /;"	d	file:
 MINILIB	Makefile	/^MINILIB = 		.\/mlx\/$/;"	m
 MININT	./libft/includes/libft.h	/^# define MININT /;"	d
@@ -69,6 +72,9 @@ MININTSIZE	./libft/includes/libft.h	/^# define MININTSIZE /;"	d
 MININTSIZE	libft/includes/libft.h	/^# define MININTSIZE /;"	d
 MININTSTR	./libft/includes/libft.h	/^# define MININTSTR /;"	d
 MININTSTR	libft/includes/libft.h	/^# define MININTSTR /;"	d
+MINUS_KEY	srcs/hooks.c	/^#define MINUS_KEY /;"	d	file:
+MIN_COLOR	srcs/colors.c	/^#define MIN_COLOR /;"	d	file:
+M_KEY	srcs/hooks.c	/^#define M_KEY /;"	d	file:
 NAME	./libft/Makefile	/^NAME = libft.a$/;"	m
 NAME	Makefile	/^NAME = fdf$/;"	m
 NAME	libft/Makefile	/^NAME = libft.a$/;"	m
@@ -76,6 +82,11 @@ OBJECTS	./libft/Makefile	/^OBJECTS =	ft_memset.o			\\$/;"	m
 OBJECTS	Makefile	/^OBJECTS =	main.o					\\$/;"	m
 OBJECTS	libft/Makefile	/^OBJECTS =	ft_memset.o			\\$/;"	m
 OPEN_KEY	srcs/hooks.c	/^#define OPEN_KEY /;"	d	file:
+O_KEY	srcs/hooks.c	/^#define O_KEY /;"	d	file:
+PIX_PER_CHAR	srcs/display.c	/^#define PIX_PER_CHAR /;"	d	file:
+PIX_PER_LINE	srcs/display.c	/^#define PIX_PER_LINE /;"	d	file:
+PLUS_KEY	srcs/hooks.c	/^#define PLUS_KEY /;"	d	file:
+P_KEY	srcs/hooks.c	/^#define P_KEY /;"	d	file:
 RED	includes/fdf.h	/^# define RED /;"	d
 RIGHT_KEY	./srcs/hooks.c	/^#define RIGHT_KEY /;"	d	file:
 RIGHT_KEY	srcs/hooks.c	/^#define RIGHT_KEY /;"	d	file:
@@ -125,8 +136,11 @@ cam_pts	./includes/fdf.h	/^	t_vec4f			***cam_pts;$/;"	m	struct:s_data
 cam_pts	includes/fdf.h	/^	t_vec4f			***cam_pts;$/;"	m	struct:s_data
 center_pts_array	srcs/init.c	/^int					center_pts_array(t_data *data)$/;"	f
 charCodeMask	./includes/keys.h	/^  charCodeMask                  = 0x000000FF,$/;"	e	enum:__anon3
+clerp	srcs/colors.c	/^int		clerp(int ca, int cb, float ratio)$/;"	f
 cmdKey	./includes/keys.h	/^  cmdKey                        = 1 << cmdKeyBit,$/;"	e	enum:__anon8
 cmdKeyBit	./includes/keys.h	/^  cmdKeyBit                     = 8,    \/* command key down?*\/$/;"	e	enum:__anon7
+color_between_ratio	srcs/colors.c	/^int		color_between_ratio(t_vec4f *a, t_vec4f *b, float r)$/;"	f
+color_for_height	srcs/colors.c	/^int		color_for_height(float min_y, float max_y, float height)$/;"	f
 cols	./includes/fdf.h	/^	int				cols;$/;"	m	struct:s_data
 cols	includes/fdf.h	/^	int				cols;$/;"	m	struct:s_data
 content	./libft/includes/libft.h	/^	void				*content;$/;"	m	struct:s_list
@@ -137,12 +151,15 @@ controlKey	./includes/keys.h	/^  controlKey                    = 1 << controlKey
 controlKeyBit	./includes/keys.h	/^  controlKeyBit                 = 12,   \/* control key down?*\/$/;"	e	enum:__anon7
 convertClipboardFlag	./includes/keys.h	/^  convertClipboardFlag          = 2     \/* Bit 1 in resume message indicates clipboard change*\/$/;"	e	enum:__anon6
 countwords	./libft/srcs/ft_strsplit.c	/^static	int	countwords(char const *s, char c)$/;"	f	file:
+decomp_color	srcs/colors.c	/^void	decomp_color(int color, int buffer[3])$/;"	f
+details	includes/fdf.h	/^	int				details;$/;"	m	struct:s_cam
 diskEvt	./includes/keys.h	/^  diskEvt                       = 7,    \/* Not sent in Carbon. See kEventClassVolume in CarbonEvents.h*\/$/;"	e	enum:__anon1
 diskMask	./includes/keys.h	/^  diskMask                      = 1 << diskEvt, \/* disk inserted*\/$/;"	e	enum:__anon2
 display_image	./srcs/display.c	/^int		display_image(t_data *data)$/;"	f
 display_image	srcs/display.c	/^int		display_image(t_data *data)$/;"	f
 distance	./includes/fdf.h	/^	int				distance;$/;"	m	struct:s_cam
-distance	includes/fdf.h	/^	float			distance;$/;"	m	struct:s_cam
+distance_coords	srcs/colors.c	/^float	distance_coords(int ax, int ay, int bx, int by)$/;"	f
+distance_pixels	srcs/colors.c	/^int		distance_pixels(t_vec4f *a, t_vec4f *b)$/;"	f
 driverEvt	./includes/keys.h	/^  driverEvt                     = 11,$/;"	e	enum:__anon15
 driverMask	./includes/keys.h	/^  driverMask                    = 0x0800,$/;"	e	enum:__anon15
 end	./libft/includes/get_next_line.h	/^	int				end;$/;"	m	struct:s_buf
@@ -159,6 +176,7 @@ file_dimensions	srcs/read.c	/^int		file_dimensions(char *path, t_data *data)$/;"
 fill_one_line	srcs/read.c	/^static int		fill_one_line(t_data *data, char *line, int i)$/;"	f	file:
 fill_world_pts	srcs/read.c	/^int		fill_world_pts(char *path, t_data *data)$/;"	f
 find_end	./libft/srcs/get_next_line.c	/^int				find_end(t_buf *b, char **line)$/;"	f
+find_min_max_height	srcs/init.c	/^int					find_min_max_height(t_data *data)$/;"	f
 ft_append	./libft/srcs/get_next_line.c	/^int				ft_append(char **adest, t_buf *b, int n, int reinit)$/;"	f
 ft_arrlen	libft/srcs/ft_arrlen.c	/^int		ft_arrlen(void *array, size_t size)$/;"	f
 ft_atoi	./libft/srcs/ft_atoi.c	/^int		ft_atoi(const char *str)$/;"	f
@@ -227,6 +245,7 @@ ft_toupper	./libft/srcs/ft_toupper.c	/^int		ft_toupper(int c)$/;"	f
 get_next_element	srcs/read.c	/^static char	*get_next_element(char *s, char buffer[MAX_STR])$/;"	f	file:
 get_next_line	./libft/srcs/get_next_line.c	/^int				get_next_line(const int fd, char **line)$/;"	f
 highLevelEventMask	./includes/keys.h	/^  highLevelEventMask            = 0x0400, \/* high-level events (includes AppleEvents)*\/$/;"	e	enum:__anon2
+iabs	srcs/colors.c	/^int		iabs(int a)$/;"	f
 img_addr	./includes/fdf.h	/^	char			*img_addr;$/;"	m	struct:s_data
 img_addr	includes/fdf.h	/^	char			*img_addr;$/;"	m	struct:s_data
 img_ptr	./includes/fdf.h	/^	void			*img_ptr;$/;"	m	struct:s_data
@@ -414,6 +433,7 @@ mDownMask	./includes/keys.h	/^  mDownMask                     = 1 << mouseDown, 
 mUpMask	./includes/keys.h	/^  mUpMask                       = 1 << mouseUp, \/* mouse button released*\/$/;"	e	enum:__anon2
 main	./srcs/main.c	/^int		main(void)$/;"	f
 main	srcs/main.c	/^int		main(int ac, char **av)$/;"	f
+marks	includes/fdf.h	/^	int				marks;$/;"	m	struct:s_cam
 matrix44f_cpy	srcs/matrix_basics.c	/^t_matrix44f			*matrix44f_cpy(t_matrix44f *dest, t_matrix44f *src)$/;"	f
 matrix44f_dup	./srcs/matrix_basics.c	/^t_matrix44f			*matrix44f_dup(t_matrix44f *a)$/;"	f
 matrix44f_dup	srcs/matrix_basics.c	/^t_matrix44f			*matrix44f_dup(t_matrix44f *a)$/;"	f
@@ -429,7 +449,9 @@ matrix44f_scale	./srcs/matrix_transforms.c	/^void				matrix44f_scale(t_matrix44f
 matrix44f_scale	srcs/matrix_transforms.c	/^void				matrix44f_scale(t_matrix44f *a, float x, float y, float z)$/;"	f
 matrix44f_translation	./srcs/matrix_transforms.c	/^void				matrix44f_translation(t_matrix44f *a, float x, float y, float z)$/;"	f
 matrix44f_translation	srcs/matrix_transforms.c	/^void				matrix44f_translation(t_matrix44f *a, float x, float y, float z)$/;"	f
+max_y	includes/fdf.h	/^	float			max_y;$/;"	m	struct:s_data
 message	./includes/keys.h	/^  unsigned long       message;$/;"	m	struct:EventRecord
+min_y	includes/fdf.h	/^	float			min_y;$/;"	m	struct:s_data
 modifiers	./includes/keys.h	/^  EventModifiers      modifiers;$/;"	m	struct:EventRecord
 mouseDown	./includes/keys.h	/^  mouseDown                     = 1,$/;"	e	enum:__anon1
 mouseMovedMessage	./includes/keys.h	/^  mouseMovedMessage             = 0x00FA,$/;"	e	enum:__anon4
@@ -439,6 +461,7 @@ networkMask	./includes/keys.h	/^  networkMask                   = 0x0400,$/;"	e	
 next	./libft/includes/get_next_line.h	/^	struct s_buf	*next;$/;"	m	struct:s_buf	typeref:struct:s_buf::s_buf
 next	./libft/includes/libft.h	/^	struct s_list		*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
 next	libft/includes/libft.h	/^	struct s_list		*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
+normalize_heigth	srcs/normalize.c	/^void	normalize_heigth(t_data *data)$/;"	f
 nullEvent	./includes/keys.h	/^  nullEvent                     = 0,$/;"	e	enum:__anon1
 optionKey	./includes/keys.h	/^  optionKey                     = 1 << optionKeyBit,$/;"	e	enum:__anon8
 optionKeyBit	./includes/keys.h	/^  optionKeyBit                  = 11,   \/* option key down?*\/$/;"	e	enum:__anon7
@@ -453,12 +476,14 @@ pixel_put	./srcs/display.c	/^void	pixel_put(t_data *data, int x, int y, int colo
 pixel_put	srcs/display.c	/^void	pixel_put(t_data *data, int x, int y, int color)$/;"	f
 print_data_details	./srcs/display.c	/^void	print_data_details(t_data *data)$/;"	f
 print_data_details	srcs/display.c	/^void	print_data_details(t_data *data)$/;"	f
+print_label	srcs/display.c	/^void	print_label(t_data *data, int line, char *label, float value)$/;"	f
 print_matrix	./srcs/print.c	/^void				print_matrix(t_matrix44f *a)$/;"	f
 print_matrix	srcs/print.c	/^void				print_matrix(t_matrix44f *a)$/;"	f
 print_point	./srcs/print.c	/^void	print_point(t_vec4f *pt)$/;"	f
 print_point	srcs/print.c	/^void	print_point(t_vec4f *pt)$/;"	f
 print_points_array	./srcs/print.c	/^void	print_points_array(t_data *data, t_vec4f ***a)$/;"	f
 print_points_array	srcs/print.c	/^void	print_points_array(t_data *data, t_vec4f ***a)$/;"	f
+proj	includes/fdf.h	/^	char			proj;$/;"	m	struct:s_cam
 ptr	./includes/fdf.h	/^	void			*ptr;$/;"	m	struct:s_data
 ptr	includes/fdf.h	/^	void			*ptr;$/;"	m	struct:s_data
 put_all_points	./srcs/display.c	/^void	put_all_points(t_data *data)$/;"	f
@@ -501,10 +526,14 @@ t_vec4f	./includes/vectors.h	/^typedef float		t_vec4f[4];$/;"	t
 t_vec4f	includes/vectors.h	/^typedef float		t_vec4f[4];$/;"	t
 theta	./includes/fdf.h	/^	float			theta;$/;"	m	struct:s_cam
 theta	includes/fdf.h	/^	float			theta;$/;"	m	struct:s_cam
-trace_all_lines	srcs/update.c	/^void				trace_all_lines(t_data *data)$/;"	f
+trace_all_gradients	srcs/update.c	/^void				trace_all_gradients(t_data *data)$/;"	f
+trace_big_gradient	srcs/gradients.c	/^void	trace_big_gradient(t_data *data, t_vec4f *a, t_vec4f *b, int pixels)$/;"	f
 trace_big_slope	srcs/lines.c	/^void	trace_big_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
+trace_gradient	srcs/gradients.c	/^void	trace_gradient(t_data *data, t_vec4f *a, t_vec4f *b)$/;"	f
 trace_line	srcs/lines.c	/^void	trace_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
+trace_small_gradient	srcs/gradients.c	/^void	trace_small_gradient(t_data *data, t_vec4f *a, t_vec4f *b, int pixels)$/;"	f
 trace_small_slope	srcs/lines.c	/^void	trace_small_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
+trace_v_gradient	srcs/gradients.c	/^void	trace_v_gradient(t_data *data, t_vec4f *a, t_vec4f *b, int pixels)$/;"	f
 trace_v_line	srcs/lines.c	/^void	trace_v_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)$/;"	f
 updateEvt	./includes/keys.h	/^  updateEvt                     = 6,$/;"	e	enum:__anon1
 updateMask	./includes/keys.h	/^  updateMask                    = 1 << updateEvt, \/* window needs updating*\/$/;"	e	enum:__anon2
@@ -518,6 +547,7 @@ update_proj_perspect_matrix	./srcs/projections.c	/^void				update_proj_perspect_
 update_proj_perspect_matrix	srcs/projections.c	/^void				update_proj_perspect_matrix(t_data *data)$/;"	f
 update_screen_points	./srcs/update.c	/^void	update_screen_points(t_data *data)$/;"	f
 update_screen_points	srcs/update.c	/^void	update_screen_points(t_data *data)$/;"	f
+update_world_height	srcs/update.c	/^void	update_world_height(t_data *data, float coef)$/;"	f
 vec4f_dup	./srcs/vectors.c	/^t_vec4f				*vec4f_dup(t_vec4f *v)$/;"	f
 vec4f_dup	srcs/vectors.c	/^t_vec4f				*vec4f_dup(t_vec4f *v)$/;"	f
 vec4f_new	./srcs/vectors.c	/^t_vec4f				*vec4f_new(float x, float y, float z, float w)$/;"	f
@@ -535,9 +565,11 @@ xy_angle	./includes/fdf.h	/^	float			xy_angle;$/;"	m	struct:s_cam
 xy_angle	includes/fdf.h	/^	float			xy_angle;$/;"	m	struct:s_cam
 xz_angle	./includes/fdf.h	/^	float			xz_angle;$/;"	m	struct:s_cam
 xz_angle	includes/fdf.h	/^	float			xz_angle;$/;"	m	struct:s_cam
+y_scale	includes/fdf.h	/^	float			y_scale;$/;"	m	struct:s_cam
 zbuffer	./includes/fdf.h	/^	float			*zbuffer;$/;"	m	struct:s_data
 zbuffer	includes/fdf.h	/^	float			*zbuffer;$/;"	m	struct:s_data
 zfar	./includes/fdf.h	/^	float			zfar;$/;"	m	struct:s_cam
 zfar	includes/fdf.h	/^	float			zfar;$/;"	m	struct:s_cam
 znear	./includes/fdf.h	/^	float			znear;$/;"	m	struct:s_cam
 znear	includes/fdf.h	/^	float			znear;$/;"	m	struct:s_cam
+zoom	includes/fdf.h	/^	float			zoom;$/;"	m	struct:s_cam

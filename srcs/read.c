@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 13:48:59 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/12/01 13:42:53 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/02 11:41:43 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ static int		fill_one_line(t_data *data, char *line, int i)
 	while (*line)
 	{
 		line = get_next_element(line, buffer);
-		if (!((data->world_pts)[i][j] = vec4f_new((float)i,
-				(float)ft_atoi(buffer), (float)j, 1.0)))
+		if (!((data->world_pts)[i][j] = vec4f_new((float)j,
+				(float)ft_atoi(buffer), (float)i, 1.0)))
 			return (0);
 		++j;
 	}
@@ -99,6 +99,5 @@ int		fill_world_pts(char *path, t_data *data)
 			|| !((data->world_pts)[data->lines][3]
 				= vec4f_new(0.0, 0.0, 1.0, 1.0)))
 		return (0);
-	printf("repere OK\n");
 	return ((close(fd) == -1) ? 0 : 1);
 }

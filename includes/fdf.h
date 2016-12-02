@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:06:36 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/12/01 12:03:14 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/02 20:49:55 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include "matrices.h"
 # define WIN_W 1024
 # define WIN_H 768
-# define INIT_XY 0
-# define INIT_XZ 0
 # define WIN_T "Test window"
 # define WHITE 0x00FFFFFF
 # define RED 0x00FF0000
@@ -34,13 +32,17 @@ typedef struct		s_cam
 {
 	float			xy_angle;
 	float			xz_angle;
-	float			distance;
+	float			y_scale;
+	float			zoom;
 	t_matrix44f		*wtoc;
 	float			znear;
 	float			zfar;
 	float			theta;
+	char			proj;
 	t_matrix44f		*ortho_proj;
 	t_matrix44f		*perspect_proj;
+	int				details;
+	int				marks;
 }					t_cam;
 
 typedef struct		s_data
@@ -54,6 +56,8 @@ typedef struct		s_data
 	int				endian;
 	int				cols;
 	int				lines;
+	float			min_y;
+	float			max_y;
 	t_cam			*cam;
 	t_vec4f			***world_pts;
 	t_vec4f			***cam_pts;
@@ -69,10 +73,10 @@ int					display_image(t_data *data);
 int					key_hooks(int keycode, void *data);
 void				update_camera(t_data *data);
 void				pixel_put(t_data *data, int x, int y, int color);
-void				print_data_details(t_data *data);
 int					display_image(t_data *data);
 void				put_all_points(t_data *data);
 void				put_grid(t_data *data, int step);
+void				print_data_details(t_data *data);
 void				update_proj_perspect_matrix(t_data *data);
 void				update_proj_orth_matrix(t_data *data);
 void				trace_line(t_data *data, t_vec4f *a, t_vec4f *b, int color);
@@ -83,6 +87,14 @@ void	print_points_array(t_data *data, t_vec4f ***a);
 void	print_all_points(t_data *data);
 void	update_cam_points(t_data *data);
 void	update_camera(t_data *data);
-
+void	update_world_height(t_data *data, float coef);
+int		distance_pixels(t_vec4f *a, t_vec4f *b);
+void	decomp_color(int color, int buffer[3]);
+void	decomp_color(int color, int buffer[3]);
+int		clerp(int ca, int cb, float ratio);
+int		color_for_height(float min_y, float max_y, float height);
+int		color_between_pts(t_vec4f *a, t_vec4f *b, int x, int y);
+int		color_between_ratio(t_vec4f *a, t_vec4f *b, float r);
+void	trace_gradient(t_data *data, t_vec4f *a, t_vec4f *b);
 
 #endif
