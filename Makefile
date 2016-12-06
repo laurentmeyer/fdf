@@ -7,11 +7,19 @@ HEADERDIR = includes
 
 SRCFILES =	main.c					\
 			init.c					\
+			matrix_basics.c			\
+			matrix_transforms.c		\
+			vectors.c				\
 			hooks.c					\
 			display.c				\
-			print.c					\
-			complex.c				\
-			julia.c
+			update.c				\
+			projections.c			\
+			lines.c					\
+			read.c					\
+			gradients.c				\
+			colors.c				\
+			utils.c					\
+			print.c
 
 LIBS =		ft						\
 			mlx
