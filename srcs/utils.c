@@ -1,36 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   points.c                                           :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/15 18:20:56 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/16 16:44:53 by lmeyer           ###   ########.fr       */
+/*   Created: 2016/12/03 12:40:30 by lmeyer            #+#    #+#             */
+/*   Updated: 2016/12/03 13:46:22 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "vectors.h"
 #include "fdf.h"
 #include <math.h>
-#include <stdlib.h>
 
-int		distance(t_pt *a, t_pt *b)
+int		iabs(int a)
 {
-	return (lround(sqrt((a->x - b->x) * (a->x - b->x)
-					+ (a->y - b->y) * (a->y - b->y)
-					+ (a->z - b->z) * (a->y - b->z))));
+	return (a < 0 ? -a : a);
 }
 
-t_pt	*init_point(int x, int y, int z)
+int		distance_pixels(t_vec4f *a, t_vec4f *b)
 {
-	t_pt	*pt;
+	return (iabs((*b)[0] - (*a)[0]) + iabs((*b)[1] - (*a)[1]));
+}
 
-	if ((pt = (t_pt *)malloc(sizeof(t_pt))))
+int		center_pts_array(t_data *data)
+{
+	int		i;
+	int		j;
+	t_vec4f	*pt;
+
+	i = 0;
+	while (i < data->lines)
 	{
-		pt->x = x;
-		pt->y = y;
-		pt->z = z;
-		pt->w = 1;
+		j = 0;
+		while ((pt = (data->world_pts)[i][j++]))
+		{
+			(*pt)[0] -= (float)(data->cols - 1.0) / 2.0;
+			(*pt)[2] -= (float)(data->lines - 1.0) / 2.0;
+		}
+		++i;
 	}
-	return (pt);
+	return (1);
 }

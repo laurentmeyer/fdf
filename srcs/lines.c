@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:39:28 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/12/02 15:58:30 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/03 13:33:36 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include <stdio.h>
 
-void	trace_v_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)
+static void	trace_v_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)
 {
 	int x;
 	int	y;
@@ -32,8 +32,7 @@ void	trace_v_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)
 	}
 }
 
-
-void	trace_small_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)
+static void	trace_small_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)
 {
 	float	slope;
 	float	error;
@@ -57,7 +56,7 @@ void	trace_small_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)
 	}
 }
 
-void	trace_big_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)
+static void	trace_big_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)
 {
 	float	slope;
 	float	error;
@@ -81,16 +80,16 @@ void	trace_big_slope(t_data *data, t_vec4f *a, t_vec4f *b, int color)
 	}
 }
 
-void	trace_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)
+void		trace_line(t_data *data, t_vec4f *a, t_vec4f *b, int color)
 {
 	if ((int)((*a)[0]) == (int)((*b)[0]))
 		trace_v_line(data, a, b, color);
 	else if (fabs(((*b)[1] - (*a)[1]) / ((*b)[0] - (*a)[0])) > 1)
-		(int)((*a)[1]) < (int)((*b)[1]) ? 
+		(int)((*a)[1]) < (int)((*b)[1]) ?
 			trace_big_slope(data, a, b, color)
 			: trace_big_slope(data, b, a, color);
 	else
-		(int)((*a)[0]) < (int)((*b)[0]) ? 
+		(int)((*a)[0]) < (int)((*b)[0]) ?
 			trace_small_slope(data, a, b, color)
 			: trace_small_slope(data, b, a, color);
 }

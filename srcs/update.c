@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/27 17:46:31 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/12/02 20:36:36 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/03 18:31:37 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 #include "matrices.h"
 #include <stdlib.h>
 
-#include <stdio.h>
-
-void	put_grid(t_data *data, int step);
-
-void	update_screen_points(t_data *data)
+static void	update_screen_points(t_data *data)
 {
 	int		i;
 	int		j;
@@ -32,14 +28,10 @@ void	update_screen_points(t_data *data)
 		while ((src = (data->cam_pts)[i][j]))
 		{
 			dst = (data->screen_pts)[i][j];
-			if (data->cam->proj == 'o')
-				m44f_x_vec4f_to(dst, data->cam->ortho_proj, src);
-			if (data->cam->proj == 'p')
-				m44f_x_vec4f_to(dst, data->cam->perspect_proj, src);
+			m44f_x_vec4f_to(dst, data->cam->ortho_proj, src);
 			(*dst)[0] += WIN_W / 2;
 			(*dst)[1] = WIN_H / 2 - (*dst)[1];
-//			printf("height = %f\n", (*((data->world_pts)[i][j]))[1]);
-			(*dst)[2] = color_for_height(data->min_y, data->max_y,
+			(*dst)[2] = color_for_height(data, data->min_y, data->max_y,
 					(*((data->world_pts)[i][j]))[1]);
 			++j;
 		}
@@ -47,7 +39,7 @@ void	update_screen_points(t_data *data)
 	}
 }
 
-void	update_cam_points(t_data *data)
+static void	update_cam_points(t_data *data)
 {
 	int		i;
 	int		j;
@@ -68,61 +60,7 @@ void	update_cam_points(t_data *data)
 	}
 }
 
-void				trace_all_gradients(t_data *data)
-{
-	int		i;
-	int		j;
-	t_vec4f	*pt;
-	t_vec4f	*next;
-
-	i = 0;
-	while (i < data->lines)
-	{
-		j = 0;
-		while ((pt = (data->screen_pts)[i][j])
-				&& (next = (data->screen_pts)[i][j++ + 1]))
-			trace_gradient(data, pt, next);
-		++i;
-	}
-	i = 0;
-	while (i < data->lines - 1)
-	{
-		j = 0;
-		while ((pt = (data->screen_pts)[i][j])
-				&& (next = (data->screen_pts)[i + 1][j++]))
-			trace_gradient(data, pt, next);
-		++i;
-	}
-}
-
-//void				trace_all_lines(t_data *data)
-//{
-//	int		i;
-//	int		j;
-//	t_vec4f	*pt;
-//	t_vec4f	*next;
-//
-//	i = 0;
-//	while (i < data->lines)
-//	{
-//		j = 0;
-//		while ((pt = (data->screen_pts)[i][j])
-//				&& (next = (data->screen_pts)[i][j++ + 1]))
-//			trace_line(data, pt, next, WHITE);
-//		++i;
-//	}
-//	i = 0;
-//	while (i < data->lines - 1)
-//	{
-//		j = 0;
-//		while ((pt = (data->screen_pts)[i][j])
-//				&& (next = (data->screen_pts)[i + 1][j++]))
-//			trace_line(data, pt, next, WHITE);
-//		++i;
-//	}
-//}
-
-void	update_world_height(t_data *data, float coef)
+void		update_world_height(t_data *data, float coef)
 {
 	int		i;
 	int		j;
@@ -143,7 +81,20 @@ void	update_world_height(t_data *data, float coef)
 	}
 }
 
-void	update_camera(t_data *data)
+static void	update_marks(t_data *data)
+{
+	if (data->cam->marks)
+	{
+		trace_line(data, (data->screen_pts)[data->lines][0],
+				(data->screen_pts)[data->lines][1], RED);
+		trace_line(data, (data->screen_pts)[data->lines][0],
+				(data->screen_pts)[data->lines][2], GREEN);
+		trace_line(data, (data->screen_pts)[data->lines][0],
+				(data->screen_pts)[data->lines][3], BLUE);
+	}
+}
+
+void		update_camera(t_data *data)
 {
 	int		i;
 
@@ -156,23 +107,13 @@ void	update_camera(t_data *data)
 	matrix44f_rotation_x(data->cam->wtoc, data->cam->xy_angle);
 	update_cam_points(data);
 	update_proj_orth_matrix(data);
-	update_proj_perspect_matrix(data);
 	update_screen_points(data);
 	ft_bzero(data->img_addr, data->bits_per_pixel * WIN_W * WIN_H / 8);
 	put_grid(data, 50);
 	put_all_points(data);
-//	trace_all_lines(data);
-	trace_all_gradients(data);
-
-	if (data->cam->marks)
-	{
-		trace_line(data, (data->screen_pts)[data->lines][0],
-				(data->screen_pts)[data->lines][1], RED);
-		trace_line(data, (data->screen_pts)[data->lines][0],
-				(data->screen_pts)[data->lines][2], GREEN);
-		trace_line(data, (data->screen_pts)[data->lines][0],
-				(data->screen_pts)[data->lines][3], BLUE);
-	}
+	update_marks(data);
+	if (data->lines > 1 || data->cols > 1)
+		trace_all_gradients(data);
 	if (!mlx_put_image_to_window(data->ptr, data->win, data->img_ptr, 0, 0))
 		exit(0);
 	print_data_details(data);

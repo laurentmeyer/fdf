@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:45:43 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/28 12:50:31 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/03 13:35:04 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include "libft.h"
 #include <math.h>
 
-void				matrix44f_translation(t_matrix44f *a, float x, float y, float z)
+void				matrix44f_translation(t_matrix44f *a, float x,
+											float y, float z)
 {
 	float	m[4][4];
 

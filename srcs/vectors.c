@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 17:04:00 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/12/01 13:13:33 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/03 16:32:37 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include "libft.h"
 #include "fdf.h"
 #include <stdlib.h>
-
-#include <stdio.h>
 
 t_vec4f				*vec4f_new(float x, float y, float z, float w)
 {
@@ -32,7 +30,7 @@ t_vec4f				*vec4f_dup(t_vec4f *v)
 {
 	t_vec4f		*tmp;
 
-	if (!v)
+	if (!v || !(*v))
 		return (NULL);
 	if ((tmp = (t_vec4f *)malloc(sizeof(t_vec4f))))
 		ft_memcpy(tmp, v, sizeof(t_vec4f));

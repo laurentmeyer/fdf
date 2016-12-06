@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:06:36 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/12/02 20:49:55 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/03 16:47:02 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@
 # include "matrices.h"
 # define WIN_W 1024
 # define WIN_H 768
-# define WIN_T "Test window"
+# define WIN_T "Fil de faire"
 # define WHITE 0x00FFFFFF
 # define RED 0x00FF0000
 # define GREEN 0x0000FF00
 # define BLUE 0x000000FF
 # define BLACK 0x000000
 # define DARK_GRAY 0x222222
-
 
 typedef struct		s_cam
 {
@@ -37,10 +36,7 @@ typedef struct		s_cam
 	t_matrix44f		*wtoc;
 	float			znear;
 	float			zfar;
-	float			theta;
-	char			proj;
 	t_matrix44f		*ortho_proj;
-	t_matrix44f		*perspect_proj;
 	int				details;
 	int				marks;
 }					t_cam;
@@ -58,6 +54,8 @@ typedef struct		s_data
 	int				lines;
 	float			min_y;
 	float			max_y;
+	int				min_col;
+	int				max_col;
 	t_cam			*cam;
 	t_vec4f			***world_pts;
 	t_vec4f			***cam_pts;
@@ -81,20 +79,20 @@ void				update_proj_perspect_matrix(t_data *data);
 void				update_proj_orth_matrix(t_data *data);
 void				trace_line(t_data *data, t_vec4f *a, t_vec4f *b, int color);
 void				trace_all_lines(t_data *data);
-
-void	print_point(t_vec4f *pt);
-void	print_points_array(t_data *data, t_vec4f ***a);
-void	print_all_points(t_data *data);
-void	update_cam_points(t_data *data);
-void	update_camera(t_data *data);
-void	update_world_height(t_data *data, float coef);
-int		distance_pixels(t_vec4f *a, t_vec4f *b);
-void	decomp_color(int color, int buffer[3]);
-void	decomp_color(int color, int buffer[3]);
-int		clerp(int ca, int cb, float ratio);
-int		color_for_height(float min_y, float max_y, float height);
-int		color_between_pts(t_vec4f *a, t_vec4f *b, int x, int y);
-int		color_between_ratio(t_vec4f *a, t_vec4f *b, float r);
-void	trace_gradient(t_data *data, t_vec4f *a, t_vec4f *b);
+void				print_point(t_vec4f *pt);
+void				print_points_array(t_data *data, t_vec4f ***a);
+void				print_all_points(t_data *data);
+void				update_camera(t_data *data);
+void				update_world_height(t_data *data, float coef);
+int					distance_pixels(t_vec4f *a, t_vec4f *b);
+void				decomp_color(int color, int buffer[3]);
+int					clerp(int ca, int cb, float ratio);
+int					color_for_height(t_data *data, float min_y,
+										float max_y, float height);
+int					color_between_pts(t_vec4f *a, t_vec4f *b, int x, int y);
+int					color_between_ratio(t_vec4f *a, t_vec4f *b, float r);
+int					distance_pixels(t_vec4f *a, t_vec4f *b);
+void				trace_all_gradients(t_data *data);
+int					center_pts_array(t_data *data);
 
 #endif

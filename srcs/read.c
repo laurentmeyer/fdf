@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 13:48:59 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/12/02 11:41:43 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/03 18:26:36 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #define MAX_STR 20
-
-#include <stdio.h>
 
 static char	*get_next_element(char *s, char buffer[MAX_STR])
 {
@@ -35,7 +33,7 @@ static char	*get_next_element(char *s, char buffer[MAX_STR])
 	return (s);
 }
 
-int		file_dimensions(char *path, t_data *data)
+int			file_dimensions(char *path, t_data *data)
 {
 	char	*line;
 	int		fd;
@@ -55,10 +53,11 @@ int		file_dimensions(char *path, t_data *data)
 			data->cols = c;
 		free(line);
 	}
+	free(line);
 	return ((close(fd) == -1) ? 0 : 1);
 }
 
-static int		fill_one_line(t_data *data, char *line, int i)
+static int	fill_one_line(t_data *data, char *line, int i)
 {
 	int		j;
 	char	buffer[MAX_STR];
@@ -75,7 +74,7 @@ static int		fill_one_line(t_data *data, char *line, int i)
 	return (1);
 }
 
-int		fill_world_pts(char *path, t_data *data)
+int			fill_world_pts(char *path, t_data *data)
 {
 	char	*line;
 	int		fd;
@@ -92,12 +91,12 @@ int		fill_world_pts(char *path, t_data *data)
 		free(line);
 	}
 	if (!((data->world_pts)[data->lines][0] = vec4f_new(0.0, 0.0, 0.0, 1.0))
-			|| !((data->world_pts)[data->lines][1]
-				= vec4f_new(1.0, 0.0, 0.0, 1.0))
-			|| !((data->world_pts)[data->lines][2]
-				= vec4f_new(0.0, 1.0, 0.0, 1.0))
-			|| !((data->world_pts)[data->lines][3]
-				= vec4f_new(0.0, 0.0, 1.0, 1.0)))
+			|| !((data->world_pts)[data->lines]
+				[1] = vec4f_new(1.0, 0.0, 0.0, 1.0))
+			|| !((data->world_pts)[data->lines]
+				[2] = vec4f_new(0.0, 1.0, 0.0, 1.0))
+			|| !((data->world_pts)[data->lines]
+				[3] = vec4f_new(0.0, 0.0, 1.0, 1.0)))
 		return (0);
 	return ((close(fd) == -1) ? 0 : 1);
 }

@@ -1,60 +1,56 @@
-OBJECTS =	main.o					\
-			init.o					\
-			matrix_basics.o			\
-			matrix_transforms.o		\
-			vectors.o				\
-			hooks.o					\
-			display.o				\
-			print.o					\
-			update.o				\
-			projections.o			\
-			lines.o					\
-			read.o					\
-			gradients.o				\
-			colors.o
+CC = 		gcc
+CFLAGS =	-Wall -Wextra -Werror
+BINARY =	fdf
+BUILDDIR =	builds
+SOURCEDIR =	srcs
+HEADERDIR = includes
 
-NAME = fdf
+SRCFILES =	main.c					\
+			init.c					\
+			hooks.c					\
+			display.c				\
+			print.c					\
+			complex.c				\
+			julia.c
+
+LIBS =		ft						\
+			mlx
 
 LIBFT = 		./libft/
 
 MINILIB = 		./mlx/
 
-CCHEADERS = -I./includes/			\
+CCHEADERS = -I./$(HEADERDIR)		\
 			-I$(LIBFT)includes/		\
 			-I$(MINILIB)
-
-CCSOURCES = ./srcs/
 
 CCLIBS = -L$(LIBFT) -lft			\
 		 -L$(MINILIB) -lmlx
 
 CCFRAMEWORKS = -framework AppKit -framework OpenGL
 
-CFLAGS = -Wall -Wextra -Werror
+SOURCES = $(SRCFILES:%.c=$(SOURCEDIR)/%.c)
+OBJECTS = $(SOURCES:$(SOURCEDIR)/%.c=$(BUILDDIR)/%.o)
 
-SOURCES = $(OBJECTS:%.o=$(CCSOURCES)%.c)
+.PHONY: all clean fclean re
 
-all : $(NAME)
-.PHONY: all
+all : $(BINARY)
 
-$(NAME) : libs
-	gcc $(CFLAGS) -o $(NAME) $(CCHEADERS) $(CCLIBS) $(SOURCES) $(CCFRAMEWORKS)
-
-libs: 
+$(BINARY) : $(OBJECTS)
 	$(MAKE) -C $(LIBFT)
 	$(MAKE) -C $(MINILIB)
-.PHONY: libs
+	$(CC) $(CCHEADERS) $(CCLIBS) $(OBJECTS) $(CCFRAMEWORKS) -o $(BINARY)
+
+$(BUILDDIR)/%.o : $(SOURCEDIR)/%.c
+	$(CC) $(CFLAGS) $(CCHEADERS) -c $< -o $@
 
 clean:
 	$(MAKE) -C $(LIBFT) clean
 	$(MAKE) -C $(MINILIB) clean
 	rm -f $(OBJECTS)
-.PHONY: clean
 
 fclean: clean
 	$(MAKE) -C $(LIBFT) fclean
 	rm -f $(NAME)
-.PHONY: fclean
 
 re: fclean all
-.PHONY: re

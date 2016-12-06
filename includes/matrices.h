@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 19:58:28 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/28 12:50:17 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/03 16:48:26 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ t_matrix44f			*matrix44f_dup(t_matrix44f *a);
 t_matrix44f			*matrix44f_cpy(t_matrix44f *dest, t_matrix44f *src);
 void				axb_matrix44f(t_matrix44f *to_change, t_matrix44f *mult);
 void				print_matrix(t_matrix44f *a);
-void				matrix44f_translation(t_matrix44f *a, float x, float y, float z);
+void				matrix44f_translation(t_matrix44f *a, float x,
+											float y, float z);
 void				matrix44f_scale(t_matrix44f *a, float x, float y, float z);
 void				matrix44f_rotation_x(t_matrix44f *a, float radians);
 void				matrix44f_rotation_y(t_matrix44f *a, float radians);

@@ -6,40 +6,42 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/27 16:58:25 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/30 18:31:48 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/03 16:49:29 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#define PIX_PER_LINE 20
+#define PIX_PER_CHAR 10
 
-void	print_point(t_vec4f *pt)
+void	print_label(t_data *data, int line, char *label, float value)
 {
-	printf("x = %f y = %f z = %f w = %f\n", (*pt)[0], (*pt)[1], (*pt)[2], (*pt)[3]);
-}
+	char *tmp;
 
-void	print_points_array(t_data *data, t_vec4f ***a)
-{
-	int		i;
-	int		j;
-
-	i = 0;
-	while (i < data->lines)
+	if ((tmp = ft_itoa((int)value)))
 	{
-		j = 0;
-		while ((data->world_pts)[i][j])
-			print_point(a[i][j++]);
-		++i;
+		mlx_string_put(data->ptr, data->win, 0,
+						line * PIX_PER_LINE, WHITE, label);
+		mlx_string_put(data->ptr, data->win, PIX_PER_CHAR * ft_strlen(label),
+				line * PIX_PER_LINE, WHITE, tmp);
+		free(tmp);
 	}
 }
 
-void				print_matrix(t_matrix44f *a)
+void	print_data_details(t_data *data)
 {
 	int		i;
 
-	i = -1;
-	printf("\n=================================================\n");
-	while (++i < 4)
-		printf("%f %f %f %f\n", (*a)[i][0], (*a)[i][1], (*a)[i][2], (*a)[i][3]);
+	i = 0;
+	if (!data->cam->details)
+		return ;
+	print_label(data, i++, "Y factor x100: ", 100 * data->cam->y_scale);
+	print_label(data, i++, "         Zoom: ", data->cam->zoom);
+	print_label(data, i++, "     XY angle: ", data->cam->xy_angle * 180 / M_PI);
+	print_label(data, i++, "     XZ angle: ", data->cam->xz_angle * 180 / M_PI);
+	print_label(data, i++, "     Marks on: ", data->cam->marks);
+	print_label(data, i++, "        min Y: ", 100 * data->min_y);
+	print_label(data, i++, "        max Y: ", 100 * data->max_y);
 }
-

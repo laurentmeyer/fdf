@@ -6,7 +6,7 @@
 /*   By: lmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 12:59:52 by lmeyer            #+#    #+#             */
-/*   Updated: 2016/11/28 12:50:22 by lmeyer           ###   ########.fr       */
+/*   Updated: 2016/12/03 13:31:57 by lmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-t_matrix44f			*matrix44f_identity(void)
+t_matrix44f		*matrix44f_identity(void)
 {
 	float	tmp[4][4];
 
@@ -26,7 +26,7 @@ t_matrix44f			*matrix44f_identity(void)
 	return (matrix44f_dup((t_matrix44f *)(&tmp)));
 }
 
-t_matrix44f			*matrix44f_dup(t_matrix44f *a)
+t_matrix44f		*matrix44f_dup(t_matrix44f *a)
 {
 	t_matrix44f	*tmp;
 
@@ -58,7 +58,7 @@ void			axb_matrix44f(t_matrix44f *to_change, t_matrix44f *mult)
 	}
 }
 
-t_matrix44f			*matrix44f_cpy(t_matrix44f *dest, t_matrix44f *src)
+t_matrix44f		*matrix44f_cpy(t_matrix44f *dest, t_matrix44f *src)
 {
 	return ((t_matrix44f *)ft_memcpy(dest, src, sizeof(t_matrix44f)));
 }
