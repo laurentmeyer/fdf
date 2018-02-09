@@ -50,6 +50,7 @@ $(BINARY) : $(OBJECTS)
 	$(CC) $(CCHEADERS) $(CCLIBS) $(OBJECTS) $(CCFRAMEWORKS) -o $(BINARY)
 
 $(BUILDDIR)/%.o : $(SOURCEDIR)/%.c
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(CCHEADERS) -c $< -o $@
 
 clean:
